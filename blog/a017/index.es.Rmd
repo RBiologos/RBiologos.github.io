@@ -350,7 +350,7 @@ mapa2 <- ggplot() +
 
 mapa2
 ```
-Mapa 2. Mapa de ocurrencias de cinco (5) especies de escarabajos coprófagos en Colombia.
+Mapa 2. Mapa de ocurrencias de cinco (5) especies de escarabajos coprófagos en una región de Colombia.
 
 <center>
 ![](https://i.ibb.co/42MJ8r3/pretty.gif){width=350}
