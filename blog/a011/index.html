@@ -9,7 +9,7 @@
 	<meta name="description" content="El espacio perfecto para Biólogos y R">
 	
 	<meta name="author" content="&lt;/R Biólogos&gt;">
-	<meta name="generator" content="Hugo 0.83.1" />
+	<meta name="generator" content="Hugo 0.93.1" />
 
 	<!-- plugins -->
 	
@@ -158,14 +158,14 @@
         <h1>Diseño de gráficos ggplot2 - Parte II</h1>
         <ul class="list-inline mb-50">
           <li class="list-inline-item"><a href="/author/david-vanegas/">David Vanegas</a></li>
-          <li class="list-inline-item">Monday, Jul 5, 2021</li>
+          <li class="list-inline-item">lunes, jul. 5, 2021</li>
         </ul>
         <img class="img-fluid mb-50 lozad" data-src="https://i.ibb.co/WpxYxdq/ES.png" alt="blog-image">
       </div>
       <div class="col-lg-8 offset-lg-2">
         <div class="post-single-content">
           
-<script src="https://rbiologos.com/blog/a011/index.es_files/header-attrs/header-attrs.js"></script>
+<script src="index.es_files/header-attrs/header-attrs.js"></script>
 
 
 <p>Continuando nuestro aprendizaje de la visualización de datos con el paquete <em><em>ggplot2</em></em>, en este post veremos que tipos de gráficos podemos elaborar y cuales son las herramientas para poder modificarlos</p>
@@ -261,7 +261,7 @@ Una particularidad de <strong>ggplot2</strong> es que los códigos de las capas 
 ggplot(iris, aes(x = Sepal.Length, y = Petal.Length))+
   ## Y agregamos la capa para que nos dibuje una dispersión de puntos
 geom_point()</code></pre>
-<p><img src="https://rbiologos.com/blog/a011/index.es_files/figure-html/unnamed-chunk-2-1.png" width="100%" /></p>
+<p><img src="index.es_files/figure-html/unnamed-chunk-2-1.png" width="100%" /></p>
 <p>Recuerda que podemos agregar más capas y mejorar el estilo de nuestra gráfica. A continuación veremos un ejemplo de como puede ir una gráfica de alta calidad, agregaremos algunas etiquetas para que vayas aprendiendo y familiarizando con las utilidades de los códigos utilizados.</p>
 <pre class="r"><code>ggplot(iris, aes(x = Sepal.Length, y = Petal.Length, 
                  col = Species, 
@@ -302,7 +302,7 @@ geom_point()</code></pre>
             legend.position = c(0.9, 0.2))+ # Posición de la leyenda
       scale_color_grey(start = 0.8, end = 0.2)+ # Colores de la leyenda
       labs(colour = &quot;Iris&quot;, shape = &quot;Iris&quot;) # Título de la leyenda</code></pre>
-<p><img src="https://rbiologos.com/blog/a011/index.es_files/figure-html/unnamed-chunk-3-1.png" width="100%" /></p>
+<p><img src="index.es_files/figure-html/unnamed-chunk-3-1.png" width="100%" /></p>
 <p>Como ves, el estilo de la gráfica cambia drásticamente, y te preguntarás <em>¿con qué fin?</em> Y te respondemos: la presentación de nuestros resultados es parte <em>fundamental</em> en el reconocimiento de nosotros como investigadores ante el lector; no es lo mismo presentar una gráfica simple a una bien elaborada, todo entra y se vende por la vista</p>
 <center>
 <img src="https://i.ibb.co/dP8Q8YV/sky.gif" width="350" />
@@ -339,7 +339,7 @@ ggplot(tangara, aes(x=weight, fill=sex, col=sex)) +
   theme(legend.key = element_blank())+
   labs(colour = &quot;Sexo&quot;, fill = &quot;Sexo&quot;)+
   scale_fill_grey(start = 0.6, end = 0.5)</code></pre>
-<p><img src="https://rbiologos.com/blog/a011/index.es_files/figure-html/unnamed-chunk-4-1.png" width="100%" /></p>
+<p><img src="index.es_files/figure-html/unnamed-chunk-4-1.png" width="100%" /></p>
 </div>
 <div id="diagrama-de-frecuencia-de-polígono" class="section level2">
 <h2>Diagrama de frecuencia de polígono</h2>
@@ -361,7 +361,7 @@ ggplot(tangara, aes(x=weight, fill=sex, col=sex)) +
         panel.background = element_blank())+
   theme(legend.key = element_blank())+
   labs(colour = &quot;Sexo&quot;)</code></pre>
-<p><img src="https://rbiologos.com/blog/a011/index.es_files/figure-html/unnamed-chunk-5-1.png" width="100%" /></p>
+<p><img src="index.es_files/figure-html/unnamed-chunk-5-1.png" width="100%" /></p>
 </div>
 <div id="diagrama-de-área" class="section level2">
 <h2>Diagrama de área</h2>
@@ -384,7 +384,7 @@ geom_area(aes(fill = sex),
             panel.background = element_blank())+
       theme(legend.key = element_blank())+
       labs(colour = &quot;Sexo&quot;, fill = &quot;Sexo&quot;)</code></pre>
-<p><img src="https://rbiologos.com/blog/a011/index.es_files/figure-html/unnamed-chunk-6-1.png" width="100%" /></p>
+<p><img src="index.es_files/figure-html/unnamed-chunk-6-1.png" width="100%" /></p>
 </div>
 <div id="diagrama-de-densidad" class="section level2">
 <h2>Diagrama de densidad</h2>
@@ -406,7 +406,7 @@ geom_area(aes(fill = sex),
         panel.background = element_blank())+
   theme(legend.key = element_blank())+
   labs(colour = &quot;Sexo&quot;, fill = &quot;Sexo&quot;)</code></pre>
-<p><img src="https://rbiologos.com/blog/a011/index.es_files/figure-html/unnamed-chunk-7-1.png" width="100%" /></p>
+<p><img src="index.es_files/figure-html/unnamed-chunk-7-1.png" width="100%" /></p>
 </div>
 <div id="diagrama-lineal" class="section level2">
 <h2>Diagrama lineal</h2>
@@ -436,7 +436,7 @@ geom_area(aes(fill = sex),
         legend.position = c(0.9, 0.2))+
   scale_color_grey(start = 0.8, end = 0.2)+
   labs(colour = &quot;Iris&quot;)</code></pre>
-<p><img src="https://rbiologos.com/blog/a011/index.es_files/figure-html/unnamed-chunk-8-1.png" width="100%" /></p>
+<p><img src="index.es_files/figure-html/unnamed-chunk-8-1.png" width="100%" /></p>
 </div>
 <div id="diagrama-de-caja" class="section level2">
 <h2>Diagrama de caja</h2>
@@ -460,7 +460,7 @@ ggplot(iris, aes(x = Species, y = Petal.Length)) +
         panel.grid.minor = element_blank(), 
         axis.line = element_line(colour = &quot;black&quot;, size = 1),
         panel.background = element_blank())</code></pre>
-<p><img src="https://rbiologos.com/blog/a011/index.es_files/figure-html/unnamed-chunk-9-1.png" width="100%" /></p>
+<p><img src="index.es_files/figure-html/unnamed-chunk-9-1.png" width="100%" /></p>
 <p>¿Interesante no? Si observaste bien, utilizamos casi el mismo código que habíamos utilizado en la gráfica de dispersión. Esto se debe porque las capas de estilo pueden utilizarse paralelamente sin importar el tipo de gráfico que utilicemos, cabe aclarar que no todas van a funcionar y que debemos hacer pequeñas modificaciones, ten cuidado y no te vayas a confundir</p>
 <center>
 <img src="https://i.ibb.co/PrVXCTH/confused.gif" width="350" />
@@ -503,7 +503,7 @@ p + xlab(&quot;Suplemento&quot;) +
   
   ## Código para girar las barras horizontalmente
   coord_flip()</code></pre>
-<p><img src="https://rbiologos.com/blog/a011/index.es_files/figure-html/unnamed-chunk-10-1.png" width="100%" /></p>
+<p><img src="index.es_files/figure-html/unnamed-chunk-10-1.png" width="100%" /></p>
 <p>O bien podemos darle un poco de estilo y presentarla de una manera diferente, pero que proporciona la misma información</p>
 <pre class="r"><code>p + xlab(&quot;Suplemento&quot;) + 
   ylab(&quot;Cantidad&quot;)+
@@ -528,7 +528,7 @@ p + xlab(&quot;Suplemento&quot;) +
   
   ## Código para girar las barras horizontalmente
   coord_polar()</code></pre>
-<p><img src="https://rbiologos.com/blog/a011/index.es_files/figure-html/unnamed-chunk-11-1.png" width="100%" /></p>
+<p><img src="index.es_files/figure-html/unnamed-chunk-11-1.png" width="100%" /></p>
 </div>
 <div id="diagrama-de-error" class="section level2">
 <h2>Diagrama de error</h2>
@@ -578,7 +578,7 @@ df2</code></pre>
         axis.line = element_line(colour = &quot;black&quot;, size = 1),
         panel.background = element_blank())+
   labs(colour = &quot;Suplemento&quot;, fill = &quot;Suplemento&quot;)</code></pre>
-<p><img src="https://rbiologos.com/blog/a011/index.es_files/figure-html/unnamed-chunk-13-1.png" width="100%" /></p>
+<p><img src="index.es_files/figure-html/unnamed-chunk-13-1.png" width="100%" /></p>
 <p>Como ves, este diagrama se compone de dos <res>geom_</res>, son ambos necesarios para poder crearlo, uno dibuja los bloques (<em>geom_bar()</em>) y el otro dibuja las líneas de error (<em>geom_errorbar()</em>).</p>
 <p>Sin embargo, podemos ver este otro tipo de gráfico, puede ser mucho más informativo, pero esa decisión va a depender de lo que estén haciendo.</p>
 <pre class="r"><code>ggplot(df2, aes(x = dose, y = len, ymin = len-sd, ymax = len+sd))+
@@ -603,7 +603,7 @@ df2</code></pre>
         legend.position = c(0.9, 0.2))+
   labs(colour = &quot;Suplemento&quot;, fill = &quot;Suplemento&quot;)+
   scale_color_grey(start = 0.8, end = 0.2)</code></pre>
-<p><img src="https://rbiologos.com/blog/a011/index.es_files/figure-html/unnamed-chunk-14-1.png" width="100%" /></p>
+<p><img src="index.es_files/figure-html/unnamed-chunk-14-1.png" width="100%" /></p>
 <p>En este diagrama podemos observar que se compone de tres <res>geom_</res>, todos necesarios para poder crearlo, uno dibuja los puntos de los datos (<em>geom_point()</em>), otro dibuja las líneas de error (<em>geom_errorbar()</em>) y otro dibuja las líneas de relación de los datos (<em>geom_line()</em>).</p>
 <center>
 <img src="https://i.ibb.co/wBF8LY9/graphic.gif" width="350" />
@@ -826,7 +826,7 @@ df2</code></pre>
 
 <!-- Main Script -->
 
-<script src="https://rbiologos.com/js/script.min.b98b8dcfa3dc53b74ecf3cf8724a1f75b4d217da25463ff3d6a28fc4a09e965bf9818dfce85452f5fb478bce779ee8cc.js" integrity="sha384-uYuNz6PcU7dOzzz4ckofdbTSF9olRj/z1qKPxKCellv5gY386FRS9ftHi853nujM"></script>
+<script src="https://rbiologos.com/js/script.min.2ebe6854af2520c59b3a80d83c6bf3b12cdfb20780527499e95a76e275624f04e37c1bbab6dd6f07f5d2524f9d55c1e3.js" integrity="sha384-Lr5oVK8lIMWbOoDYPGvzsSzfsgeAUnSZ6Vp24nViTwTjfBu6tt1vB/XSUk&#43;dVcHj"></script>
 
 
 

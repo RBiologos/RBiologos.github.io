@@ -167,6 +167,17 @@ myspecies_coords <- gbif_data$data[ , c("scientificName",
 head(myspecies_coords)
 ```
 
+También podemos observar un resumen de los datos, como cantidad, departamentos de las ocurrencias, entre otros
+
+```{r}
+# Conoceremos la cantidad de registros
+dim(myspecies_coords)[1]
+
+# Cantidad de datos por departamento
+myspecies_coords  %>%
+    count(stateProvince, sort = TRUE)
+```
+
 Ahora guardaremos nuestros datos en un archivo tipo *_csv_* para poder tener la información en nuestra computadora.
 
 ```{r eval=FALSE}
@@ -283,6 +294,18 @@ for (s in 1:length(myspecies2)) {
   }
 }
 head(df_final)
+```
+
+También podemos observar un resumen de los datos, como cantidad, departamentos de las ocurrencias, entre otros
+
+```{r}
+# Conoceremos la cantidad de registros
+dim(df_final)[1]
+
+# Cantidad de datos por departamento
+df_final  %>%
+  group_by(scientificName) %>%
+    count(stateProvince, sort = TRUE)
 ```
 
 Ahora guardaremos nuestros datos en un archivo **csv** para poder tener la información en nuestra computadora.
