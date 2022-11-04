@@ -165,7 +165,7 @@
       <div class="col-lg-8 offset-lg-2">
         <div class="post-single-content">
           
-<script src="index.es_files/header-attrs/header-attrs.js"></script>
+<script src="https://rbiologos.com/blog/a015/index.es_files/header-attrs/header-attrs.js"></script>
 
 
 <p>Se conoce como estadística paramétrica a las pruebas que se basan en el muestreo de una población con parámetros específicos como la normalidad y la homocedasticidad</p>
@@ -461,7 +461,7 @@ ggplot(datos2, aes(x = Species, y = Sepal.Length)) +
   labs(x = &quot;Especies&quot;, 
        y = &quot;Largo del sépalo&quot;)+
   theme_bw()</code></pre>
-<p><img src="index.es_files/figure-html/unnamed-chunk-8-1.png" width="100%" /></p>
+<p><img src="https://rbiologos.com/blog/a015/index.es_files/figure-html/unnamed-chunk-8-1.png" width="100%" /></p>
 <p>Ahora calculemos el <em>p valor</em> a partir del estadístico <em>t student</em>. R tiene una función integrada que permite realizar t-test para una o dos muestras, tanto con corrección (en caso de que las varianzas no sean iguales) como sin ella. Esta función devuelve tanto el <em>p-value</em> del test como el intervalo de confianza para la verdadera diferencia de medias.</p>
 <pre class="r"><code># Filtramos la información para realizar el test
 x &lt;- iris[iris$Species == &quot;setosa&quot;, ]$Sepal.Length

@@ -165,7 +165,7 @@
       <div class="col-lg-8 offset-lg-2">
         <div class="post-single-content">
           
-<script src="index.es_files/header-attrs/header-attrs.js"></script>
+<script src="https://rbiologos.com/blog/a016/index.es_files/header-attrs/header-attrs.js"></script>
 
 
 <p>Cuando se evalúa la relación entres dos variables, es importante determinar cómo se relacionan estas, por tanto, una relación lineal es un término que se utiliza para describir una dicha relación.</p>
@@ -220,7 +220,7 @@ iris %&gt;%
                    y = Petal.Length)) +
         geom_point()+
         theme_bw()</code></pre>
-<p><img src="index.es_files/figure-html/unnamed-chunk-2-1.png" width="100%" /></p>
+<p><img src="https://rbiologos.com/blog/a016/index.es_files/figure-html/unnamed-chunk-2-1.png" width="100%" /></p>
 <p>Como podemos observar en este gráfico la tendencia lineal es clara, sin embargo, es necesario encontrar los valores estadísticos para afirmar este comportamiento.</p>
 <pre class="r"><code>modelo_lineal &lt;- lm(Sepal.Length ~ Petal.Length, # De esta manera se formula la relación entre dos variables
                     data = iris)
@@ -255,7 +255,7 @@ summary(modelo_lineal)</code></pre>
         labs(x = &quot;Largo del sépalo&quot;, y = &quot;Largo del pétalo&quot;) +
         geom_smooth(method = &quot;lm&quot;, se = FALSE, color = &quot;red&quot;) +
         theme_bw()</code></pre>
-<p><img src="index.es_files/figure-html/unnamed-chunk-4-1.png" width="100%" /></p>
+<p><img src="https://rbiologos.com/blog/a016/index.es_files/figure-html/unnamed-chunk-4-1.png" width="100%" /></p>
 <p>De esta manera, podemos observar que nuestra línea de tendencia tiene cierto comportamiento en relación a la nube de puntos de la relación de nuestros datos, por lo cual, podemos inferir que nuestro modelo de regresión lineal si se está cumpliendo.</p>
 </div>
 <div id="correlación-lineal" class="section level1">
@@ -348,7 +348,7 @@ shapiro.test(esc$Especies)</code></pre>
 </center>
 <p><br></p>
 <p>Ahora observemos el comportamiento de los puntos en una gráfica (Fig. 1), mediante el paquete <em><em>ggplot2</em></em>.</p>
-<p><img src="index.es_files/figure-html/unnamed-chunk-9-1.png" width="100%" /></p>
+<p><img src="https://rbiologos.com/blog/a016/index.es_files/figure-html/unnamed-chunk-9-1.png" width="100%" /></p>
 <p>Fig. 1. Riqueza de especies de escarabajos prófagos y la tasa de semillas dispersadas por parte de estos <a href="#anexo1">Anexo 1.</a></p>
 <p>Claramente se observa un patrón de relación de la nube de puntos (Fig. 1), estos puntos no se observan dispersos y por tanto el valor del coeficiente de correlación.</p>
 </div>
@@ -452,7 +452,7 @@ col &lt;- colorRampPalette(c(&quot;#BB4444&quot;, &quot;#EE9988&quot;, &quot;#FF
 corrplot(esc.cor, method = &quot;shade&quot;, sade.col = NA, tl.col = &quot;black&quot;, 
          tl.srt = 45, col = col(200), addCoef.col = &quot;black&quot;, 
          addcolorlabel = &quot;no&quot;, order = &quot;AOE&quot;, type = &quot;upper&quot;, diag = F)</code></pre>
-<p><img src="index.es_files/figure-html/unnamed-chunk-13-1.png" width="100%" /></p>
+<p><img src="https://rbiologos.com/blog/a016/index.es_files/figure-html/unnamed-chunk-13-1.png" width="100%" /></p>
 <p>En este tipo de gráficos en la diagonal están las variables, por encima están los cuadros de colores, entre más intensidad del color, ya sea azul (positiva) o rojo (negativa), mayor es la correlación, donde los colores ténues significan correlación baja. Dentro de cada cuadro se observan los valores exactos de correlación.</p>
 <center>
 <img src="https://i.ibb.co/xzkRq9X/parkour.gif" width="350" />

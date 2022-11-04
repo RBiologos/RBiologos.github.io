@@ -165,7 +165,7 @@
       <div class="col-lg-8 offset-lg-2">
         <div class="post-single-content">
           
-<script src="index.es_files/header-attrs/header-attrs.js"></script>
+<script src="https://rbiologos.com/blog/a014/index.es_files/header-attrs/header-attrs.js"></script>
 
 
 <p>Otro de los aspectos que permite hacer la inferencia es determinar si existe o no asociación entre diferentes variables, es decir, de unas hipótesis cuya validez debemos confirmar o rechazar.</p>
@@ -255,13 +255,13 @@ ggplot(data = iris, aes(x = Sepal.Length)) +
         panel.background = element_blank())+
   theme(legend.key = element_blank())+
   labs(colour = &quot;Cantidad&quot;, fill = &quot;Cantidad&quot;)</code></pre>
-<p><img src="index.es_files/figure-html/unnamed-chunk-1-1.png" width="100%" />
+<p><img src="https://rbiologos.com/blog/a014/index.es_files/figure-html/unnamed-chunk-1-1.png" width="100%" />
 Fig. 1. Histograma y Curva normal teórica de la longitud del sépalo de las flores del género <em>Iris</em></p>
 <ul>
 <li><strong><em>Gráfica de densidad</em></strong></li>
 </ul>
 <pre class="r"><code>plot(density(iris$Sepal.Length), main = &#39;Density Plot of Sepal Length&#39;, xlab = &#39; Sepal Length&#39;)</code></pre>
-<p><img src="index.es_files/figure-html/unnamed-chunk-2-1.png" width="100%" /></p>
+<p><img src="https://rbiologos.com/blog/a014/index.es_files/figure-html/unnamed-chunk-2-1.png" width="100%" /></p>
 <p>Fig. 2. Histograma y Curva normal teórica de la longitud del sépalo de las flores del género <em>Iris</em></p>
 <p>Como muestran la gráficas, no queda claro el cumplimiento de la normalidad. Visualmente, la variable sepal lenght <strong><em>NO</em></strong> parece distribuida normalmente. En el gráfico de densidad se puede apreciar que tiene una parte superior plana con sesgo positivo. Esto es bastante común, por lo que el uso de todas las herramientas es fundamental para no caer en malas desiciones.</p>
 </div>
@@ -274,7 +274,7 @@ Fig. 1. Histograma y Curva normal teórica de la longitud del sépalo de las flo
        xlab = &quot;Cuantiles teóricos&quot;, 
        ylab = &quot;Quantiles de la muestra&quot;)
 qqline(iris$Sepal.Length, col = &quot;steelblue&quot;, lwd = 2)</code></pre>
-<p><img src="index.es_files/figure-html/unnamed-chunk-3-1.png" width="100%" /></p>
+<p><img src="https://rbiologos.com/blog/a014/index.es_files/figure-html/unnamed-chunk-3-1.png" width="100%" /></p>
 <p>Fig. 3. Gráfico de cuantiles teóricos con el la función <em>qqnorm</em> de la longitud del sépalo de la base de datos <em>iris</em></p>
 <p>Otra forma de ver el comportamiento de nuestros datos es con el paquete <res>car</res>, el cuál nos mostrará de manera más óptima dicho comportamiento (Fig. 4) y su función <res>qqPlot()</res></p>
 <pre class="r"><code>## El paquete &quot;car&quot;, tiene como dependencia &quot;carData&quot;
@@ -283,7 +283,7 @@ library(car)
 qqPlot(iris$Sepal.Length, pch = 16, col = c(&quot;black&quot;), 
        col.lines = &quot;blue&quot;, cex = 1,
        main = &quot;Gráfica Q-Q&quot;, id = F )</code></pre>
-<p><img src="index.es_files/figure-html/unnamed-chunk-4-1.png" width="100%" /></p>
+<p><img src="https://rbiologos.com/blog/a014/index.es_files/figure-html/unnamed-chunk-4-1.png" width="100%" /></p>
 <p>Fig. 4. Gráfico de cuantiles teóricos con el la función <em>qqPlot</em> de la longitud del sépalo de la base de datos <em>iris</em></p>
 <p>De acuerdo al comportamiento en el <strong><em>gráfico Q-Q</em></strong>, podemos indagar que nuestros datos si parecen cierta distribución normal, observemos que los puntos parecen caer sobre una línea recta, sin embargo, como bien habíamos dicho anteriormente, es mejor realizar todos los pasos para no cometer algún error de apreciación.</p>
 <ul>
@@ -685,7 +685,7 @@ bartlett.test(list(a,b))</code></pre>
         panel.grid.minor = element_blank(), 
         axis.line = element_line(colour = &quot;black&quot;, size = 1),
         panel.background = element_blank())</code></pre>
-<p><img src="index.es_files/figure-html/unnamed-chunk-25-1.png" width="100%" /></p>
+<p><img src="https://rbiologos.com/blog/a014/index.es_files/figure-html/unnamed-chunk-25-1.png" width="100%" /></p>
 <p>Fig. 5. Comportamiento de datos de la Longitud del pétalo para tres especies de plantas del género <em>Iris</em>.</p>
 <p>Ahora organizamos nuestro datos para poder seguir con el ejercicio</p>
 <pre class="r"><code>## Calculamos la varianza respecto a las variables
