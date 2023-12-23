@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Authors on R Biólogos</title>
+    <link>https://rbiologos.github.io/author/</link>
+    <description>Recent content in Authors on R Biólogos</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>Copyright &amp;copy; 2020 Modificado por [David Vanegas](https://davidvanegal.github.io/) bajo la plantilla [Themefisher](https://themefisher.com) de [HUGO](https://gethugothemes.com)</copyright>
+    <atom:link href="https://rbiologos.github.io/author/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>David Vanegas</title>
+      <link>https://rbiologos.github.io/author/david-vanegas/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://rbiologos.github.io/author/david-vanegas/</guid>
+      <description>Soy biólogo de la Universidad del Quindío en Colombia, amante de los insectos y en especial de los escarabajos coprófagos.</description>
+    </item>
+    <item>
+      <title>David Vanegas-Alarcón</title>
+      <link>https://rbiologos.github.io/author/david-vanegas-alarcon/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://rbiologos.github.io/author/david-vanegas-alarcon/</guid>
+      <description>Soy un biólogo graduado de la Universidad del Quindío en Colombia, con una gran pasión por los insectos, especialmente los escarabajos coprófagos.</description>
+    </item>
+    <item>
+      <title>Eduardo Grajales</title>
+      <link>https://rbiologos.github.io/author/eduardo-grajales/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://rbiologos.github.io/author/eduardo-grajales/</guid>
+      <description>Soy biólogo de profesión y apasionado por los ecosistemas de alta montaña. Me considero una persona bastante curiosa, alegre, siempre con deseo de aprender, conocer, explorar diferentes lugares cargados de mucha naturaleza y, sobre todo, compartir mis conocimientos tanto a colegas (o afines a la profesión) como a personas que por diferentes factores desconocen totalmente la importancia del medio ambiente y el rol de la educación ambiental.</description>
+    </item>
+    <item>
+      <title>Eliana Tabares Lara</title>
+      <link>https://rbiologos.github.io/author/eliana-tabares/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://rbiologos.github.io/author/eliana-tabares/</guid>
+      <description>Bióloga, con particular interés en las áreas de la genética y la conservación. Me considero una persona en constante aprendizaje, siempre en búsqueda de nuevos temas y áreas del conocimiento de los cuales enriquecerme y aprovecharlos.</description>
+    </item>
+  </channel>
+</rss>
