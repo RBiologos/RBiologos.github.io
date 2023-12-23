@@ -2,368 +2,368 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://rbiologos.com/pt/blog/</loc>
+    <loc>https://rbiologos.github.io/pt/blog/</loc>
     <lastmod>2021-04-13T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://rbiologos.com/blog/"
+                href="https://rbiologos.github.io/blog/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://rbiologos.com/en/blog/"
+                href="https://rbiologos.github.io/en/blog/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="https://rbiologos.com/pt/blog/"
+                href="https://rbiologos.github.io/pt/blog/"
                 />
   </url><url>
-    <loc>https://rbiologos.com/pt/categories/</loc>
+    <loc>https://rbiologos.github.io/pt/categories/</loc>
     <lastmod>2021-04-13T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://rbiologos.com/categories/"
+                href="https://rbiologos.github.io/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://rbiologos.com/en/categories/"
+                href="https://rbiologos.github.io/en/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="https://rbiologos.com/pt/categories/"
+                href="https://rbiologos.github.io/pt/categories/"
                 />
   </url><url>
-    <loc>https://rbiologos.com/pt/blog/a006/</loc>
+    <loc>https://rbiologos.github.io/pt/blog/a006/</loc>
     <lastmod>2021-04-13T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://rbiologos.com/blog/a006/"
+                href="https://rbiologos.github.io/blog/a006/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://rbiologos.com/en/blog/a006/"
+                href="https://rbiologos.github.io/en/blog/a006/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="https://rbiologos.com/pt/blog/a006/"
+                href="https://rbiologos.github.io/pt/blog/a006/"
                 />
   </url><url>
-    <loc>https://rbiologos.com/pt/tags/leitura/</loc>
+    <loc>https://rbiologos.github.io/pt/tags/leitura/</loc>
     <lastmod>2021-04-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://rbiologos.com/pt/tags/r/</loc>
-    <lastmod>2021-04-13T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://rbiologos.com/tags/r/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://rbiologos.com/en/tags/r/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://rbiologos.com/pt/tags/r/"
-                />
-  </url><url>
-    <loc>https://rbiologos.com/pt/categories/r/</loc>
+    <loc>https://rbiologos.github.io/pt/tags/r/</loc>
     <lastmod>2021-04-13T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://rbiologos.com/categories/r/"
+                href="https://rbiologos.github.io/tags/r/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://rbiologos.com/en/categories/r/"
+                href="https://rbiologos.github.io/en/tags/r/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="https://rbiologos.com/pt/categories/r/"
+                href="https://rbiologos.github.io/pt/tags/r/"
                 />
   </url><url>
-    <loc>https://rbiologos.com/pt/</loc>
+    <loc>https://rbiologos.github.io/pt/categories/r/</loc>
     <lastmod>2021-04-13T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://rbiologos.com/"
+                href="https://rbiologos.github.io/categories/r/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://rbiologos.com/en/"
+                href="https://rbiologos.github.io/en/categories/r/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="https://rbiologos.com/pt/"
+                href="https://rbiologos.github.io/pt/categories/r/"
                 />
   </url><url>
-    <loc>https://rbiologos.com/pt/tags/rstudio/</loc>
+    <loc>https://rbiologos.github.io/pt/</loc>
     <lastmod>2021-04-13T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://rbiologos.com/tags/rstudio/"
+                href="https://rbiologos.github.io/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://rbiologos.com/en/tags/rstudio/"
+                href="https://rbiologos.github.io/en/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="https://rbiologos.com/pt/tags/rstudio/"
+                href="https://rbiologos.github.io/pt/"
                 />
   </url><url>
-    <loc>https://rbiologos.com/pt/tags/</loc>
+    <loc>https://rbiologos.github.io/pt/tags/rstudio/</loc>
     <lastmod>2021-04-13T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://rbiologos.com/tags/"
+                href="https://rbiologos.github.io/tags/rstudio/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://rbiologos.com/en/tags/"
+                href="https://rbiologos.github.io/en/tags/rstudio/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="https://rbiologos.com/pt/tags/"
+                href="https://rbiologos.github.io/pt/tags/rstudio/"
                 />
   </url><url>
-    <loc>https://rbiologos.com/pt/tags/dados/</loc>
+    <loc>https://rbiologos.github.io/pt/tags/</loc>
+    <lastmod>2021-04-13T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://rbiologos.github.io/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://rbiologos.github.io/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://rbiologos.github.io/pt/tags/"
+                />
+  </url><url>
+    <loc>https://rbiologos.github.io/pt/tags/dados/</loc>
     <lastmod>2021-04-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://rbiologos.com/pt/tags/estrutura/</loc>
+    <loc>https://rbiologos.github.io/pt/tags/estrutura/</loc>
     <lastmod>2021-04-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://rbiologos.com/pt/blog/a005/</loc>
+    <loc>https://rbiologos.github.io/pt/blog/a005/</loc>
     <lastmod>2021-04-07T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://rbiologos.com/blog/a005/"
+                href="https://rbiologos.github.io/blog/a005/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://rbiologos.com/en/blog/a005/"
+                href="https://rbiologos.github.io/en/blog/a005/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="https://rbiologos.com/pt/blog/a005/"
+                href="https://rbiologos.github.io/pt/blog/a005/"
                 />
   </url><url>
-    <loc>https://rbiologos.com/pt/blog/a004/</loc>
+    <loc>https://rbiologos.github.io/pt/blog/a004/</loc>
     <lastmod>2021-03-18T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://rbiologos.com/blog/a004/"
+                href="https://rbiologos.github.io/blog/a004/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://rbiologos.com/en/blog/a004/"
+                href="https://rbiologos.github.io/en/blog/a004/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="https://rbiologos.com/pt/blog/a004/"
+                href="https://rbiologos.github.io/pt/blog/a004/"
                 />
   </url><url>
-    <loc>https://rbiologos.com/pt/blog/a003/</loc>
+    <loc>https://rbiologos.github.io/pt/blog/a003/</loc>
     <lastmod>2021-03-18T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://rbiologos.com/blog/a003/"
+                href="https://rbiologos.github.io/blog/a003/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://rbiologos.com/en/blog/a003/"
+                href="https://rbiologos.github.io/en/blog/a003/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="https://rbiologos.com/pt/blog/a003/"
+                href="https://rbiologos.github.io/pt/blog/a003/"
                 />
   </url><url>
-    <loc>https://rbiologos.com/pt/tags/software/</loc>
+    <loc>https://rbiologos.github.io/pt/tags/software/</loc>
     <lastmod>2021-03-18T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://rbiologos.com/tags/software/"
+                href="https://rbiologos.github.io/tags/software/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://rbiologos.com/en/tags/software/"
+                href="https://rbiologos.github.io/en/tags/software/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="https://rbiologos.com/pt/tags/software/"
+                href="https://rbiologos.github.io/pt/tags/software/"
                 />
   </url><url>
-    <loc>https://rbiologos.com/pt/blog/a002/</loc>
+    <loc>https://rbiologos.github.io/pt/blog/a002/</loc>
     <lastmod>2021-03-16T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://rbiologos.com/blog/a002/"
+                href="https://rbiologos.github.io/blog/a002/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://rbiologos.com/en/blog/a002/"
+                href="https://rbiologos.github.io/en/blog/a002/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="https://rbiologos.com/pt/blog/a002/"
+                href="https://rbiologos.github.io/pt/blog/a002/"
                 />
   </url><url>
-    <loc>https://rbiologos.com/pt/tags/history/</loc>
+    <loc>https://rbiologos.github.io/pt/tags/history/</loc>
     <lastmod>2021-03-16T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://rbiologos.com/tags/history/"
+                href="https://rbiologos.github.io/tags/history/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://rbiologos.com/en/tags/history/"
+                href="https://rbiologos.github.io/en/tags/history/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="https://rbiologos.com/pt/tags/history/"
+                href="https://rbiologos.github.io/pt/tags/history/"
                 />
   </url><url>
-    <loc>https://rbiologos.com/pt/blog/a001/</loc>
+    <loc>https://rbiologos.github.io/pt/blog/a001/</loc>
     <lastmod>2021-03-16T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://rbiologos.com/blog/a001/"
+                href="https://rbiologos.github.io/blog/a001/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://rbiologos.com/en/blog/a001/"
+                href="https://rbiologos.github.io/en/blog/a001/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="https://rbiologos.com/pt/blog/a001/"
+                href="https://rbiologos.github.io/pt/blog/a001/"
                 />
   </url><url>
-    <loc>https://rbiologos.com/pt/author/</loc>
+    <loc>https://rbiologos.github.io/pt/author/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://rbiologos.com/author/"
+                href="https://rbiologos.github.io/author/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://rbiologos.com/en/author/"
+                href="https://rbiologos.github.io/en/author/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="https://rbiologos.com/pt/author/"
+                href="https://rbiologos.github.io/pt/author/"
                 />
   </url><url>
-    <loc>https://rbiologos.com/pt/author/david-vanegas/</loc>
+    <loc>https://rbiologos.github.io/pt/author/david-vanegas/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://rbiologos.com/author/david-vanegas/"
+                href="https://rbiologos.github.io/author/david-vanegas/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://rbiologos.com/en/author/david-vanegas/"
+                href="https://rbiologos.github.io/en/author/david-vanegas/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="https://rbiologos.com/pt/author/david-vanegas/"
+                href="https://rbiologos.github.io/pt/author/david-vanegas/"
                 />
   </url><url>
-    <loc>https://rbiologos.com/pt/author/david-vanegas-alarcon/</loc>
+    <loc>https://rbiologos.github.io/pt/author/david-vanegas-alarcon/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://rbiologos.com/author/david-vanegas-alarcon/"
+                href="https://rbiologos.github.io/author/david-vanegas-alarcon/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://rbiologos.com/en/author/david-vanegas-alarcon/"
+                href="https://rbiologos.github.io/en/author/david-vanegas-alarcon/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="https://rbiologos.com/pt/author/david-vanegas-alarcon/"
+                href="https://rbiologos.github.io/pt/author/david-vanegas-alarcon/"
                 />
   </url><url>
-    <loc>https://rbiologos.com/pt/author/eduardo-grajales/</loc>
+    <loc>https://rbiologos.github.io/pt/author/eduardo-grajales/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://rbiologos.com/author/eduardo-grajales/"
+                href="https://rbiologos.github.io/author/eduardo-grajales/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://rbiologos.com/en/author/eduardo-grajales/"
+                href="https://rbiologos.github.io/en/author/eduardo-grajales/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="https://rbiologos.com/pt/author/eduardo-grajales/"
+                href="https://rbiologos.github.io/pt/author/eduardo-grajales/"
                 />
   </url><url>
-    <loc>https://rbiologos.com/pt/author/eliana-tabares/</loc>
+    <loc>https://rbiologos.github.io/pt/author/eliana-tabares/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://rbiologos.com/author/eliana-tabares/"
+                href="https://rbiologos.github.io/author/eliana-tabares/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://rbiologos.com/en/author/eliana-tabares/"
+                href="https://rbiologos.github.io/en/author/eliana-tabares/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="https://rbiologos.com/pt/author/eliana-tabares/"
+                href="https://rbiologos.github.io/pt/author/eliana-tabares/"
                 />
   </url>
 </urlset>
