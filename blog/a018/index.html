@@ -251,7 +251,7 @@ corr &lt;- ggpairs(bioenv)
 
 ## Graficamos dicho resultado
 corr</code></pre>
-<p><img src="https://rbiologos.github.io/blog/a018/index.es_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p><img src="https://rbiologos.github.io/blog/a018/index.es_files/figure-html/unnamed-chunk-4-1.png" width="100%" /></p>
 <p>El resultado de la matriz de correlación se puede interpretar de la siguiente manera:</p>
 <ul>
 <li>Cuanto mayor sea el valor, más correlacionadas positivamente estarán las dos variables.</li>
@@ -295,7 +295,7 @@ summary(pca)</code></pre>
 <p><a name="5"></a></p>
 <p>Una de estas herramientas se utiliza para visualizar la importancia de cada componente principal y se puede utilizar para determinar la cantidad de componentes principales que se deben mantener en un análisis de componentes principales (PCA). El <strong>Scree Plot</strong> se puede generar usando la función <em><res>fviz_eig()</res></em>.</p>
 <pre class="r"><code>fviz_eig(pca, addlabels = TRUE)</code></pre>
-<p><img src="https://rbiologos.github.io/blog/a018/index.es_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p><img src="https://rbiologos.github.io/blog/a018/index.es_files/figure-html/unnamed-chunk-7-1.png" width="100%" /></p>
 <p>Este gráfico muestra los valores propios en una curva descendente, de mayor a menor. Los dos primeros componentes pueden considerarse los más significativos ya que contienen casi el <strong><em>90 %</em></strong> de la información total de los datos.</p>
 </div>
 <div id="biplot-de-los-atributos" class="section level3">
@@ -304,7 +304,7 @@ summary(pca)</code></pre>
 <p>De manera paralela podemos utilizar el gráfico de biplot, con el cual es posible visualizar las similitudes y diferencias entre las muestras, y además muestra el impacto de cada atributo en cada uno de los componentes principales.</p>
 <pre class="r"><code># Graph of the variables
 fviz_pca_var(pca, col.var = &quot;black&quot;)</code></pre>
-<p><img src="https://rbiologos.github.io/blog/a018/index.es_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p><img src="https://rbiologos.github.io/blog/a018/index.es_files/figure-html/unnamed-chunk-8-1.png" width="100%" /></p>
 <p>Del gráfico anterior se pueden observar tres datos principales.</p>
 <ul>
 <li><p>En primer lugar, todas las variables que se agrupan están en cierto grado de correlación positivamente entre sí, y ese es el caso, por ejemplo, de las variables <strong>a</strong>, <strong>b</strong> y <strong>d</strong> que tienen una correlación positiva entre sí.</p></li>
@@ -341,14 +341,14 @@ loadings</code></pre>
 <p>Un valor bajo significa que la variable no está perfectamente representada por ese componente. Por otro lado, un valor alto significa una buena representación de la variable en ese componente.</p>
 <pre class="r"><code>## Contribución de las variables al PC1 y PC2
 fviz_cos2(pca, choice = &quot;var&quot;, axes = 1:2)</code></pre>
-<p><img src="https://rbiologos.github.io/blog/a018/index.es_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p><img src="https://rbiologos.github.io/blog/a018/index.es_files/figure-html/unnamed-chunk-10-1.png" width="100%" /></p>
 <p>Igualmente, podemos crear un mapa de factores a partir igualmente del cos2 (coseno cuadrado, coordenadas al cuadrado), a partir de la paquetería <em><res>corrplot</res></em> de la siguiente manera:</p>
 <pre class="r"><code>## Extraemos los datos del PCA para graficar
 var &lt;- get_pca_var(pca)
 
 ## Generamos el gráfico de correlación
 corrplot(var$contrib, is.corr=FALSE)  </code></pre>
-<p><img src="https://rbiologos.github.io/blog/a018/index.es_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p><img src="https://rbiologos.github.io/blog/a018/index.es_files/figure-html/unnamed-chunk-11-1.png" width="100%" /></p>
 <p>En los códigos y gráficos anteriores se calculó el valor del coseno cuadrado para cada variable con respecto a los dos primeros componentes principales.</p>
 <p>Así, en las ilustraciones en general, las variables <strong>a</strong>, <strong>b</strong> y <strong>c</strong> son las tres variables principales con el cos2 más alto y, por lo tanto, son las que más contribuyen a PC1 y PC2. Particularmente las variables <strong>a</strong> y <strong>b</strong> contribuyen en mayor medida al PC1 y la variable <strong>c</strong> contribuye en mayor manera al PC2, en relación a los otras variables.</p>
 <center>
@@ -363,7 +363,7 @@ corrplot(var$contrib, is.corr=FALSE)  </code></pre>
 <pre class="r"><code>fviz_pca_var(pca, col.var = &quot;cos2&quot;,
             gradient.cols = c(&quot;black&quot;, &quot;blue&quot;, &quot;green&quot;),
             repel = TRUE)</code></pre>
-<p><img src="https://rbiologos.github.io/blog/a018/index.es_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p><img src="https://rbiologos.github.io/blog/a018/index.es_files/figure-html/unnamed-chunk-12-1.png" width="100%" /></p>
 <p>Del gráfico biplot anterior entonces podemos concluir que:</p>
 <ul>
 <li>Las variables con alto cos2 están coloreadas en verde: <strong>a</strong>.</li>
