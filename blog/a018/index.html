@@ -244,7 +244,7 @@ apply(X = bioenv, MARGIN = 2, FUN = var)</code></pre>
 <div id="análisis-de-correlación" class="section level2">
 <h2>Análisis de correlación</h2>
 <p><a name="3"></a></p>
-<p>En el primer paso para el entendimiento de nuestros datos, haremos una correlación, la cual suele usarse para analizar la correlación de las variables que tenemos previamente al análisis de PCA. Se puede calcular usando la función <em><res>ggpairs()</em></res> del paquete <em><res>GGally</res></em>.</p>
+<p>En el primer paso para el entendimiento de nuestros datos, haremos una correlación, la cual suele usarse para analizar la correlación de las variables que tenemos previamente al análisis de PCA. Se puede calcular usando la función <res>ggpairs()</res> del paquete <res>GGally</res>.</p>
 <pre class="r"><code>## Ejecutamos el código para la correlación de las variables
 corr &lt;- ggpairs(bioenv)
 
@@ -292,7 +292,7 @@ summary(pca)</code></pre>
 <div id="scree-plot" class="section level3">
 <h3>Scree Plot</h3>
 <p><a name="5"></a></p>
-<p>Una de estas herramientas se utiliza para visualizar la importancia de cada componente principal y se puede utilizar para determinar la cantidad de componentes principales que se deben mantener en un análisis de componentes principales (PCA). El <strong>Scree Plot</strong> se puede generar usando la función <em><res>fviz_eig()</res></em>.</p>
+<p>Una de estas herramientas se utiliza para visualizar la importancia de cada componente principal y se puede utilizar para determinar la cantidad de componentes principales que se deben mantener en un análisis de componentes principales (PCA). El <strong>Scree Plot</strong> se puede generar usando la función <res>fviz_eig()</res>.</p>
 <pre class="r"><code>fviz_eig(pca, addlabels = TRUE)</code></pre>
 <p><img src="https://rbiologos.github.io/blog/a018/index.es_files/figure-html/unnamed-chunk-7-1.png" width="100%" /></p>
 <p>Este gráfico muestra los valores propios en una curva descendente, de mayor a menor. Los dos primeros componentes pueden considerarse los más significativos ya que contienen casi el <strong><em>90 %</em></strong> de la información total de los datos.</p>
@@ -336,12 +336,12 @@ loadings</code></pre>
 <div id="contribución-de-cada-variable" class="section level3">
 <h3>Contribución de cada variable</h3>
 <p><a name="8"></a></p>
-<p>El objetivo de la esta visualización es determinar cuánto está representada cada variable en un componente determinado. Esta calidad de representación se llama Cos2 y corresponde al coseno cuadrado, y se calcula utilizando la función <em><res>fviz_cos2</res></em>.</p>
+<p>El objetivo de la esta visualización es determinar cuánto está representada cada variable en un componente determinado. Esta calidad de representación se llama Cos2 y corresponde al coseno cuadrado, y se calcula utilizando la función <res>fviz_cos2</res>.</p>
 <p>Un valor bajo significa que la variable no está perfectamente representada por ese componente. Por otro lado, un valor alto significa una buena representación de la variable en ese componente.</p>
 <pre class="r"><code>## Contribución de las variables al PC1 y PC2
 fviz_cos2(pca, choice = &quot;var&quot;, axes = 1:2)</code></pre>
 <p><img src="https://rbiologos.github.io/blog/a018/index.es_files/figure-html/unnamed-chunk-10-1.png" width="100%" /></p>
-<p>Igualmente, podemos crear un mapa de factores a partir igualmente del cos2 (coseno cuadrado, coordenadas al cuadrado), a partir de la paquetería <em><res>corrplot</res></em> de la siguiente manera:</p>
+<p>Igualmente, podemos crear un mapa de factores a partir igualmente del cos2 (coseno cuadrado, coordenadas al cuadrado), a partir de la paquetería <res>corrplot</res> de la siguiente manera:</p>
 <pre class="r"><code>## Extraemos los datos del PCA para graficar
 var &lt;- get_pca_var(pca)
 
@@ -358,7 +358,7 @@ corrplot(var$contrib, is.corr=FALSE)  </code></pre>
 <div id="biplot-combinado-con-cos2" class="section level3">
 <h3>Biplot combinado con cos2</h3>
 <p><a name="9"></a></p>
-<p>Los dos últimos enfoques de visualización son biplot e importancia de las variables, los cuales se pueden combinar para crear un único biplot, donde las variables con puntuaciones de cos2 similares tendrán colores similares. Esto se logra ajustando la función <em><res>fviz_pca_var</res></em> de la siguiente manera</p>
+<p>Los dos últimos enfoques de visualización son biplot e importancia de las variables, los cuales se pueden combinar para crear un único biplot, donde las variables con puntuaciones de cos2 similares tendrán colores similares. Esto se logra ajustando la función <res>fviz_pca_var</res> de la siguiente manera</p>
 <pre class="r"><code>fviz_pca_var(pca, col.var = &quot;cos2&quot;,
             gradient.cols = c(&quot;black&quot;, &quot;blue&quot;, &quot;green&quot;),
             repel = TRUE)</code></pre>

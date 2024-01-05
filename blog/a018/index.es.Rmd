@@ -8,17 +8,17 @@ categories:
   - R
   - RStudio
 tags:
-  - Datos
-  - GBIF
-  - Mapa
+  - Análisis
+  - Componentes
+  - Principales
   - visualización
 ---
 
 El ***Análisis de componentes principales*** es una técnica muy útil cuando tenemos datos que contienen múltiples variables, y que queremos reducir con el fin de quedarnos solo con lo esencial.
 
-<center>
-![](https://i.ibb.co/FDBH0jr/Aot1.gif){width=350}
-</center></br>
+<center>![](https://i.ibb.co/FDBH0jr/Aot1.gif){width="350"}</center>
+
+</br>
 
 # Contenido del post
 
@@ -38,20 +38,20 @@ El ***Análisis de componentes principales*** es una técnica muy útil cuando t
 # Introducción
 <a name="1"></a>
 
-El ***Análisis de componentes principales***, o _PCA_ por sus siglas en inglés, es una técnica muy útil cuando tenemos que trabajar con datos que tienen muchas variables o características. Por ejemplo, imagina que estás estudiando un ecosistema y tienes datos de la temperatura, la humedad, la vegetación, el viento, el riesgo de incendios, etc. ¿Cómo puedes visualizar toda esa información en un solo gráfico? ¿Cómo puedes saber qué variables son las más importantes o las que más influyen en el comportamiento del ecosistema? Aquí es donde entra el PCA.
+El ***Análisis de componentes principales***, o *PCA* por sus siglas en inglés, es una técnica muy útil cuando tenemos que trabajar con datos que tienen muchas variables o características. Por ejemplo, imagina que estás estudiando un ecosistema y tienes datos de la temperatura, la humedad, la vegetación, el viento, el riesgo de incendios, etc. ¿Cómo puedes visualizar toda esa información en un solo gráfico? ¿Cómo puedes saber qué variables son las más importantes o las que más influyen en el comportamiento del ecosistema? Aquí es donde entra el PCA.
 
 El PCA es una forma de reducir la dimensionalidad de los datos, es decir, de simplificarlos para quedarnos solo con lo esencial. Lo que hace el PCA es encontrar unas nuevas variables, llamadas ***componentes principales***, que son combinaciones lineales de las variables originales, que tienen la propiedad de capturar la mayor parte de la variación o la información de los datos. Así, podemos representar los datos en un espacio de menor dimensión, por ejemplo, en un plano bidimensional o en un espacio tridimensional. Esto nos puede dar pistas sobre qué variables son las que determinan el fenómeno del sistema que estamos estudiando. Por ejemplo, si la primera componente principal está muy relacionada con la temperatura y la humedad, podemos inferir que estas variables son las que más afectan al ecosistema.
 
 En resumen, el PCA es una técnica muy poderosa y versátil que nos permite simplificar y entender mejor nuestros datos. Si quieres aprender más sobre cómo aplicar el PCA a tus datos, te invito a seguir leyendo este blog, te explicaremos cómo hacer el PCA paso a paso en R y cómo interpretar los resultados.
 
-<center>
-![](https://i.ibb.co/x2FLKG7/retumbar.gif){width=350}
-</center></br>
+<center>![](https://i.ibb.co/x2FLKG7/retumbar.gif){width="350"}</center>
+
+</br>
 
 # Código en R
 <a name="2"></a>
 
-Para aprender a hacer un PCA en R usaremos un conjunto de datos llamado ***bioenv***, obtenido del blog [Principal Components Analysis](https://bio723-class.github.io/Bio723-book/principal-components-analysis.html#principal-components-analysis-in-r). 
+Para aprender a hacer un PCA en R usaremos un conjunto de datos llamado ***bioenv***, obtenido del blog [Principal Components Analysis](https://bio723-class.github.io/Bio723-book/principal-components-analysis.html#principal-components-analysis-in-r).
 
 Como primera medida a tomar, conoceremos las paqueterías de R que vamos a utilizar en este ejercicio.
 
@@ -62,14 +62,14 @@ library(factoextra)
 library(corrplot)
 ```
 
-Esta base de datos, es un conjunto de variables observadas en lugares del fondo marino, en un estudio de biología marina: el primero es un conjunto de variables biológicas, el recuento de cinco grupos de especies, y el segundo es un conjunto de cuatro variables ambientales. Los grupos de especies se abrevian como “a” hasta “e”. Las variables ambientales son “contaminación”, un índice compuesto de contaminación que combina mediciones de concentraciones de metales pesados e hidrocarburos; profundidad, la profundidad en metros del fondo marino donde se tomó la muestra; “temperatura”, la temperatura del agua en el punto de muestreo; y 'sedimento', una clasificación del sustrato de la muestra en una de tres categorías de sedimentos. 
+Esta base de datos, es un conjunto de variables observadas en lugares del fondo marino, en un estudio de biología marina: el primero es un conjunto de variables biológicas, el recuento de cinco grupos de especies, y el segundo es un conjunto de cuatro variables ambientales. Los grupos de especies se abrevian como “a” hasta “e”. Las variables ambientales son “contaminación”, un índice compuesto de contaminación que combina mediciones de concentraciones de metales pesados e hidrocarburos; profundidad, la profundidad en metros del fondo marino donde se tomó la muestra; “temperatura”, la temperatura del agua en el punto de muestreo; y 'sedimento', una clasificación del sustrato de la muestra en una de tres categorías de sedimentos.
 
-<center>
-![](https://i.ibb.co/0fmB3RD/wall-titans.gif){width=350}
-</center></br>
+<center>![](https://i.ibb.co/0fmB3RD/wall-titans.gif){width="350"}</center>
+
+</br>
 
 Para el ejercicio que realizaremos únicamente analizaremos las variables del recuendo de los cinco grupos de especies. Así, comenzaremos leyendo nuestra base de datos desde nuestro repositorio en **GITHUB**, y filtraremos la información que necesitemos.
- 
+
 ```{r message=FALSE}
 ## Esta es una base de datos que se encuentra en línea, por ello, 
 ## debemos guardar los datos en una variable
@@ -91,12 +91,13 @@ apply(X = bioenv, MARGIN = 2, FUN = mean)
 ## Análisis de varianza
 apply(X = bioenv, MARGIN = 2, FUN = var)
 ```
+
 Como observamos, el promedio de los datos muestra que no hay estandarización entre las variables, mientras que variables como *Depth* quien posee valores muy altos en comparación con las otra variables.Además podemos observar que en términos de la varianza, la variable *Depth* sigue teniendo el mismo comportamiento. Si no se estandarizan las variables para que tengan media cero y desviación estándar 1 antes de realizar el estudio PCA, la variable *Depth* dominará la mayoría de las componentes principales.
 
 ## Análisis de correlación
 <a name="3"></a>
 
-En el primer paso para el entendimiento de nuestros datos, haremos una correlación, la cual suele usarse para analizar la correlación de las variables que tenemos previamente al análisis de PCA. Se puede calcular usando la función _<res>ggpairs()_</res> del paquete _<res>GGally</res>_. 
+En el primer paso para el entendimiento de nuestros datos, haremos una correlación, la cual suele usarse para analizar la correlación de las variables que tenemos previamente al análisis de PCA. Se puede calcular usando la función <res>ggpairs()</res> del paquete <res>GGally</res>.
 
 ```{r out.width="100%"}
 ## Ejecutamos el código para la correlación de las variables
@@ -108,8 +109,8 @@ corr
 
 El resultado de la matriz de correlación se puede interpretar de la siguiente manera:
 
-- Cuanto mayor sea el valor, más correlacionadas positivamente estarán las dos variables.
-- Cuanto más cerca esté el valor de -1, más negativamente estarán correlacionados.
+-   Cuanto mayor sea el valor, más correlacionadas positivamente estarán las dos variables.
+-   Cuanto más cerca esté el valor de -1, más negativamente estarán correlacionados.
 
 Así podemos decir que las variables tienen una correlación alta, siendo la variable *a* y *b* poseen los mayores valores. Cabe resaltar que la variable *c* tiene los valores más bajos de correlación en comparación con las otras variables.
 
@@ -120,6 +121,7 @@ pca <- prcomp(bioenv, center=TRUE, retx=TRUE)
 ## Visualizamos el resumen de los resultados
 summary(pca)
 ```
+
 Vemos que aproximadamente el ***58.95 %*** de la variación en los datos es capturada por el primer componente (PC1) y aproximadamente el ***90.00 %*** por los tres primeros componentes (PC3).
 
 Comparemos los valores devueltos por el PCA con los que obtendríamos si realizáramos un análisis propio de la matriz de covarianza que corresponde a nuestros datos. De esta manera, procederemos a ver nuestros resultados
@@ -131,16 +133,16 @@ pca
 ## Visualización de los componentes principales
 <a name="4"></a>
 
-El análisis previo de la matriz de carga proporcionó una buena comprensión de la relación entre cada uno de los dos primeros componentes principales y los atributos de los datos. Sin embargo, puede que no resulte atractivo visualmente. Para entender mejor estos resultados hay un par de estrategias de visualización estándar que pueden ayudar al investigador a obtener información sobre los datos. 
+El análisis previo de la matriz de carga proporcionó una buena comprensión de la relación entre cada uno de los dos primeros componentes principales y los atributos de los datos. Sin embargo, puede que no resulte atractivo visualmente. Para entender mejor estos resultados hay un par de estrategias de visualización estándar que pueden ayudar al investigador a obtener información sobre los datos.
 
-<center>
-![](https://i.ibb.co/xJk1PKk/At2.gif){width=350}
-</center></br>
+<center>![](https://i.ibb.co/xJk1PKk/At2.gif){width="350"}</center>
+
+</br>
 
 ### Scree Plot
 <a name="5"></a>
 
-Una de estas herramientas se utiliza para visualizar la importancia de cada componente principal y se puede utilizar para determinar la cantidad de componentes principales que se deben mantener en un análisis de componentes principales (PCA). El **Scree Plot** se puede generar usando la función _<res>fviz_eig()</res>_.
+Una de estas herramientas se utiliza para visualizar la importancia de cada componente principal y se puede utilizar para determinar la cantidad de componentes principales que se deben mantener en un análisis de componentes principales (PCA). El **Scree Plot** se puede generar usando la función <res>fviz_eig()</res>.
 
 ```{r out.width="100%"}
 fviz_eig(pca, addlabels = TRUE)
@@ -160,17 +162,17 @@ fviz_pca_var(pca, col.var = "black")
 
 Del gráfico anterior se pueden observar tres datos principales.
 
-- En primer lugar, todas las variables que se agrupan están en cierto grado de correlación positivamente entre sí, y ese es el caso, por ejemplo, de las variables **a**, **b** y **d** que tienen una correlación positiva entre sí. 
+-   En primer lugar, todas las variables que se agrupan están en cierto grado de correlación positivamente entre sí, y ese es el caso, por ejemplo, de las variables **a**, **b** y **d** que tienen una correlación positiva entre sí.
 
-- Entonces, cuanto mayor sea la distancia entre la variable y el origen, mejor representada estará esa variable. Según el biplot, la variable **a** tiene una magnitud mayor en comparación con las variables **b** y **d** y, por lo tanto, están bien representados en comparación con la variable **a**.
+-   Entonces, cuanto mayor sea la distancia entre la variable y el origen, mejor representada estará esa variable. Según el biplot, la variable **a** tiene una magnitud mayor en comparación con las variables **b** y **d** y, por lo tanto, están bien representados en comparación con la variable **a**.
 
-- Finalmente, las variables que están correlacionadas negativamente se muestran en los lados opuestos del origen del biplot, como la variable **c**.
+-   Finalmente, las variables que están correlacionadas negativamente se muestran en los lados opuestos del origen del biplot, como la variable **c**.
 
 Igualmente, a partir del biplot podemos inferir que la variable **a** está altamente correlacionada con PC1, pero solo débilmente asociada con PC2. Por el contrario, la variable **c** está fuertemente correlacionada con PC2 pero sólo débilmente con PC1. También podemos aproximar las correlaciones entre las variables mismas; por ejemplo, **b** y **d** están bastante fuertemente correlacionadas, pero débilmente correlacionadas con **c**.
 
-<center>
-![](https://i.ibb.co/wrMJ5SK/at3.gif){width=350}
-</center></br>
+<center>![](https://i.ibb.co/wrMJ5SK/at3.gif){width="350"}</center>
+
+</br>
 
 ## Calcular cargas factoriales
 <a name="7"></a>
@@ -190,7 +192,7 @@ La magnitud de las cargas factoriales es en lo que desea centrarse. Por ejemplo,
 ### Contribución de cada variable
 <a name="8"></a>
 
-El objetivo de la esta visualización es determinar cuánto está representada cada variable en un componente determinado. Esta calidad de representación se llama Cos2 y corresponde al coseno cuadrado, y se calcula utilizando la función _<res>fviz_cos2</res>_.
+El objetivo de la esta visualización es determinar cuánto está representada cada variable en un componente determinado. Esta calidad de representación se llama Cos2 y corresponde al coseno cuadrado, y se calcula utilizando la función <res>fviz_cos2</res>.
 
 Un valor bajo significa que la variable no está perfectamente representada por ese componente. Por otro lado, un valor alto significa una buena representación de la variable en ese componente.
 
@@ -199,7 +201,7 @@ Un valor bajo significa que la variable no está perfectamente representada por 
 fviz_cos2(pca, choice = "var", axes = 1:2)
 ```
 
-Igualmente, podemos crear un mapa de factores a partir igualmente del cos2 (coseno cuadrado, coordenadas al cuadrado), a partir de la paquetería _<res>corrplot</res>_ de la siguiente manera:
+Igualmente, podemos crear un mapa de factores a partir igualmente del cos2 (coseno cuadrado, coordenadas al cuadrado), a partir de la paquetería <res>corrplot</res> de la siguiente manera:
 
 ```{r out.width="100%"}
 ## Extraemos los datos del PCA para graficar
@@ -213,14 +215,14 @@ En los códigos y gráficos anteriores se calculó el valor del coseno cuadrado 
 
 Así, en las ilustraciones en general, las variables **a**, **b** y **c** son las tres variables principales con el cos2 más alto y, por lo tanto, son las que más contribuyen a PC1 y PC2. Particularmente las variables **a** y **b** contribuyen en mayor medida al PC1 y la variable **c** contribuye en mayor manera al PC2, en relación a los otras variables.
 
-<center>
-![](https://i.ibb.co/ZMswqMq/at4.gif){width=350}
-</center></br>
+<center>![](https://i.ibb.co/ZMswqMq/at4.gif){width="350"}</center>
+
+</br>
 
 ### Biplot combinado con cos2
 <a name="9"></a>
 
-Los dos últimos enfoques de visualización son biplot e importancia de las variables, los cuales se pueden combinar para crear un único biplot, donde las variables con puntuaciones de cos2 similares tendrán colores similares. Esto se logra ajustando la función _<res>fviz_pca_var</res>_ de la siguiente manera
+Los dos últimos enfoques de visualización son biplot e importancia de las variables, los cuales se pueden combinar para crear un único biplot, donde las variables con puntuaciones de cos2 similares tendrán colores similares. Esto se logra ajustando la función <res>fviz_pca_var</res> de la siguiente manera
 
 ```{r out.width="100%"}
 fviz_pca_var(pca, col.var = "cos2",
@@ -230,9 +232,9 @@ fviz_pca_var(pca, col.var = "cos2",
 
 Del gráfico biplot anterior entonces podemos concluir que:
 
-- Las variables con alto cos2 están coloreadas en verde: **a**.
-- Ls variavles con medio cos2 tienen un color azul: **b** y **c**.
-- Finalmente, las variables de bajo cos2 tienen color negro: **d** y **e**.
+-   Las variables con alto cos2 están coloreadas en verde: **a**.
+-   Ls variavles con medio cos2 tienen un color azul: **b** y **c**.
+-   Finalmente, las variables de bajo cos2 tienen color negro: **d** y **e**.
 
 # Resumen
 <a name="10"></a>
@@ -243,39 +245,36 @@ Como siempre, desde RBiólogos esperamos que este tipo de post nos ayuden a entr
 
 Así mismo, recordar que la estadística y matemática deben ir acompañadas por una buena discusión biológica, donde se pueda hacer ciencia de excelente calidad.
 
-<center>
-![](https://i.ibb.co/DR0Zzk5/eren-jaeger-eren.gif){width=350}
-</center></br>
+<center>![](https://i.ibb.co/DR0Zzk5/eren-jaeger-eren.gif){width="350"}</center>
+
+</br>
 
 # Literatura
 <a name="11"></a>
 
-- [Principal Component Analysis in R Tutorial](https://www.datacamp.com/tutorial/pca-analysis-r)
+-   [Principal Component Analysis in R Tutorial](https://www.datacamp.com/tutorial/pca-analysis-r)
 
-- [- [Principal Component Analysis in R Tutorial](https://www.statforbiology.com/2021/stat_multivar_pca/)
+-   [- [Principal Component Analysis in R Tutorial](https://www.statforbiology.com/2021/stat_multivar_pca/)
 
-- [Análisis de Componentes Principales (PCA)](https://statologos.com/analisis-de-componentes-principales-en-r/)
+-   [Análisis de Componentes Principales (PCA)](https://statologos.com/analisis-de-componentes-principales-en-r/)
 
-- [Principal Component Analysis in R Tutorial](https://rstudio-pubs-static.s3.amazonaws.com/841127_fd111ed9c6a040e1a90e92686f90e3f8.html#353_Variables_cuantitativas)
+-   [Principal Component Analysis in R Tutorial](https://rstudio-pubs-static.s3.amazonaws.com/841127_fd111ed9c6a040e1a90e92686f90e3f8.html#353_Variables_cuantitativas)
 
-- [Análisis de componentes principales](https://arcruz0.github.io/libroadp/indexes.html)
+-   [Análisis de componentes principales](https://arcruz0.github.io/libroadp/indexes.html)
 
-- [Detección de anomalías: Autoencoders y PCA](https://cienciadedatos.net/documentos/52_deteccion_anomalias_autoencoder_pca.html#Bagging_PCA)
+-   [Detección de anomalías: Autoencoders y PCA](https://cienciadedatos.net/documentos/52_deteccion_anomalias_autoencoder_pca.html#Bagging_PCA)
 
-- [ANÁLISIS DE COMPONENTES PRINCIPALES (PCA)](https://rpubs.com/Cristina_Gil/PCA)
+-   [ANÁLISIS DE COMPONENTES PRINCIPALES (PCA)](https://rpubs.com/Cristina_Gil/PCA)
 
-- [PCA - Principal Component Analysis Essentials](http://www.sthda.com/english/articles/31-principal-component-methods-in-r-practical-guide/112-pca-principal-component-analysis-essentials/#data-standardization)
+-   [PCA - Principal Component Analysis Essentials](http://www.sthda.com/english/articles/31-principal-component-methods-in-r-practical-guide/112-pca-principal-component-analysis-essentials/#data-standardization)
 
-- [Carga factorial decodificacion de cargas factoriales en el modelo multifactor](https://fastercapital.com/es/contenido/Carga-factorial--decodificacion-de-cargas-factoriales-en-el-modelo-multifactor.html#:~:text=los%20m%C3%A1s%20desafiantes.-,Las%20cargas%20factoriales%20representan%20la%20fuerza%20de%20la%20relaci%C3%B3n%20entre,como%20correlaciones%20entre%20las%20variables)
+-   [Carga factorial decodificacion de cargas factoriales en el modelo multifactor](https://fastercapital.com/es/contenido/Carga-factorial--decodificacion-de-cargas-factoriales-en-el-modelo-multifactor.html#:~:text=los%20m%C3%A1s%20desafiantes.-,Las%20cargas%20factoriales%20representan%20la%20fuerza%20de%20la%20relaci%C3%B3n%20entre,como%20correlaciones%20entre%20las%20variables)
 
 # Más información
 <a name="12"></a>
 
 Estos análisis se han realizado utilizando el software R (v.4.3.2) y Rstudio (v. 2023.12.0)
 
-Recuerda que todos nuestros códigos están almacenados en [GitHub](https://github.com/RBiologos/Posts) 
+Recuerda que todos nuestros códigos están almacenados en [GitHub](https://github.com/RBiologos/Posts)
 
-
-<center>
-![](https://i.ibb.co/DpKmR1k/github.png){width="350"}
-</center>
+<center>![](https://i.ibb.co/DpKmR1k/github.png){width="350"}</center>

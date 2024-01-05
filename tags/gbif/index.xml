@@ -7,15 +7,8 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
     <copyright>Copyright &amp;copy; 2020 Modificado por [David Vanegas](https://davidvanegal.github.io/) bajo la plantilla [Themefisher](https://themefisher.com) de [HUGO](https://gethugothemes.com)</copyright>
-    <lastBuildDate>Wed, 03 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 03 Mar 2022 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://rbiologos.github.io/tags/gbif/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Análisis de componentes principales</title>
-      <link>https://rbiologos.github.io/blog/a018/</link>
-      <pubDate>Wed, 03 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://rbiologos.github.io/blog/a018/</guid>
-      <description>El Análisis de componentes principales es una técnica muy útil cuando tenemos datos que contienen múltiples variables, y que queremos reducir con el fin de quedarnos solo con lo esencial.</description>
-    </item>
     <item>
       <title>Trabajando con datos de GBIF</title>
       <link>https://rbiologos.github.io/blog/a017/</link>

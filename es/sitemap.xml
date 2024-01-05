@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://rbiologos.github.io/tags/an%C3%A1lisis/</loc>
+    <lastmod>2024-01-03T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://rbiologos.github.io/blog/a018/</loc>
     <lastmod>2024-01-03T00:00:00+00:00</lastmod>
   </url><url>
@@ -41,13 +44,10 @@
                 href="https://rbiologos.github.io/categories/"
                 />
   </url><url>
-    <loc>https://rbiologos.github.io/tags/datos/</loc>
+    <loc>https://rbiologos.github.io/tags/componentes/</loc>
     <lastmod>2024-01-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://rbiologos.github.io/tags/gbif/</loc>
-    <lastmod>2024-01-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://rbiologos.github.io/tags/mapa/</loc>
+    <loc>https://rbiologos.github.io/tags/principales/</loc>
     <lastmod>2024-01-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://rbiologos.github.io/categories/r/</loc>
@@ -110,6 +110,15 @@
     <loc>https://rbiologos.github.io/tags/visualizaci%C3%B3n/</loc>
     <lastmod>2024-01-03T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://rbiologos.github.io/tags/datos/</loc>
+    <lastmod>2022-03-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://rbiologos.github.io/tags/gbif/</loc>
+    <lastmod>2022-03-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://rbiologos.github.io/tags/mapa/</loc>
+    <lastmod>2022-03-03T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://rbiologos.github.io/blog/a017/</loc>
     <lastmod>2022-03-03T00:00:00+00:00</lastmod>
   </url><url>
@@ -127,9 +136,6 @@
   </url><url>
     <loc>https://rbiologos.github.io/blog/a016/</loc>
     <lastmod>2021-12-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://rbiologos.github.io/tags/an%C3%A1lisis/</loc>
-    <lastmod>2021-11-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://rbiologos.github.io/tags/homocedasticidad/</loc>
     <lastmod>2021-11-26T00:00:00+00:00</lastmod>
@@ -405,21 +411,21 @@
                 href="https://rbiologos.github.io/author/"
                 />
   </url><url>
-    <loc>https://rbiologos.github.io/author/david-vanegas-alarcon/</loc>
+    <loc>https://rbiologos.github.io/author/david-vanegas/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://rbiologos.github.io/en/author/david-vanegas-alarcon/"
+                href="https://rbiologos.github.io/en/author/david-vanegas/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="https://rbiologos.github.io/pt/author/david-vanegas-alarcon/"
+                href="https://rbiologos.github.io/pt/author/david-vanegas/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://rbiologos.github.io/author/david-vanegas-alarcon/"
+                href="https://rbiologos.github.io/author/david-vanegas/"
                 />
   </url><url>
     <loc>https://rbiologos.github.io/author/eduardo-grajales/</loc>
@@ -437,23 +443,6 @@
                 rel="alternate"
                 hreflang="es"
                 href="https://rbiologos.github.io/author/eduardo-grajales/"
-                />
-  </url><url>
-    <loc>https://rbiologos.github.io/author/eliana-tabares/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://rbiologos.github.io/en/author/eliana-tabares/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://rbiologos.github.io/pt/author/eliana-tabares/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://rbiologos.github.io/author/eliana-tabares/"
                 />
   </url><url>
     <loc>https://rbiologos.github.io/shop/</loc>
