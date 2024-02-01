@@ -10,6 +10,13 @@
     <lastBuildDate>Wed, 03 Jan 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://rbiologos.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Análisis biogeográficos</title>
+      <link>https://rbiologos.github.io/blog/a019/</link>
+      <pubDate>Wed, 03 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>https://rbiologos.github.io/blog/a019/</guid>
+      <description>En los campos de la biología evolutiva y la biogeografía, investigar la distribución de las especies y su relación con la evolución es esencial para desentrañar los complejos patrones que han dado forma a la diversidad de la vida a lo largo del tiempo y en diferentes lugares.</description>
+    </item>
+    <item>
       <title>Análisis de componentes principales</title>
       <link>https://rbiologos.github.io/blog/a018/</link>
       <pubDate>Wed, 03 Jan 2024 00:00:00 +0000</pubDate>
@@ -155,6 +162,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://rbiologos.github.io/author/eduardo-grajales/</guid>
       <description>Soy biólogo de profesión y apasionado por los ecosistemas de alta montaña. Me considero una persona bastante curiosa, alegre, siempre con deseo de aprender, conocer, explorar diferentes lugares cargados de mucha naturaleza y, sobre todo, compartir mis conocimientos tanto a colegas (o afines a la profesión) como a personas que por diferentes factores desconocen totalmente la importancia del medio ambiente y el rol de la educación ambiental.</description>
+    </item>
+    <item>
+      <title>Maximiliano Ortiz</title>
+      <link>https://rbiologos.github.io/author/maximiliano-ortiz/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://rbiologos.github.io/author/maximiliano-ortiz/</guid>
+      <description>Me presento, soy Maximiliano Ortiz🐻, biólogo egresado de la Universidad del Quindío y programador autodidacta. Con gustos en campos como la zoología, especialmente con una inclinación hacia la mastozoología, la evolución, la genética y la bioinformática.</description>
     </item>
   </channel>
 </rss>
