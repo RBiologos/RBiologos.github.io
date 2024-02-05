@@ -1,8 +1,8 @@
 ---
 title: Análisis biogeográficos
 author: Maximiliano Ortiz
-date: '2024-01-03'
-image: https://i.ibb.co/jJ22hzQ/ES.png
+date: '2024-02-05'
+image: "https://i.ibb.co/qs8Hxwk/ES.png"
 slug: []
 categories:
   - R
@@ -13,7 +13,7 @@ tags:
   - visualización
 ---
 
-En los campos de la biogeografía y la biología evolutiva, investigar la distribución de las especies y su relación con la evolución es esencial para desentrañar los complejos patrones que han dado forma a la diversidad de la vida a lo largo del tiempo y en diferentes lugares.
+En los campos de la biogeografía y la biología evolutiva, investigar la distribución de las especies y su relación con la evolución es esencial para desentrañar los complejos patrones que han dado forma a la diversidad de la vida a lo largo del tiempo y en diferentes lugares. 
 
 <center>![](https://i.ibb.co/WgStRJz/gumball.gif){width="350"}</center>
 </br>
@@ -54,7 +54,7 @@ library(ape)
 library(maps)
 ```
 
-Despues de cargados los paquetes necesarios, procederemos a leer los archivos requeridos para nuestro análisis, para ello, utilizaremos las funciones <res>read.csv()</res> y <res>read.tree()</res>. Estos datos incluyen información geoespacial y filogenética necesaria para el análisis y la visualización posterior.
+Despues de cargados los paquetes necesarios, procederemos a leer los archivos requeridos para nuestro análisis, para ello, utilizaremos las funciones <res>read.csv()</res> y <res>read.tree()</res>. Estos datos incluyen información _geoespacial y filogenética_ necesaria para el análisis y la visualización posterior.
 
 <center>![](https://i.ibb.co/tKNx3vN/Darwin.gif){width="350"}</center>
 </br>
@@ -181,7 +181,7 @@ Recuerda que debemos hacer un análisis reflexivo sobre nuestros resultados para
 
 Estos análisis se han realizado utilizando el software R (v.4.3.2) y Rstudio (v. 2023.12.1+402). 
 
-El proceso de edición ha sido realizado por [David Vanegas-Alarcón](https://rbiologos.github.io/author/david-vanegas-alarcon/)
+El proceso de edición del post ha sido realizado por [David Vanegas-Alarcón](https://rbiologos.github.io/author/david-vanegas-alarcon/)
 
 Recuerda que todos nuestros códigos están almacenados en [GitHub](https://github.com/RBiologos/Posts)
 
