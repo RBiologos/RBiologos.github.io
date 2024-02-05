@@ -86,7 +86,6 @@ Primero cargamos los paquetes necesarios para poder descargar, limpiar y visuali
 
 ```{r message=FALSE}
 library(rgbif)
-library(scrubr)
 library(maps)
 library(tidyverse)
 ```
@@ -167,7 +166,7 @@ myspecies_coords <- gbif_data$data[ , c("scientificName",
 head(myspecies_coords)
 ```
 
-También podemos observar un resumen de los datos, como cantidad, departamentos de las ocurrencias, entre otros
+También podemos observar un resumen de los datos, como cantidad, departamentos de las ocurrencias, entre otros.
 
 ```{r}
 # Conoceremos la cantidad de registros

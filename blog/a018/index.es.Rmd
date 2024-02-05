@@ -2,7 +2,7 @@
 title: Análisis de componentes principales
 author: David Vanegas
 date: '2024-01-03'
-image: https://i.ibb.co/VgPKSPL/ES.png
+image: "https://i.ibb.co/VgPKSPL/ES.png"
 slug: []
 categories:
   - R

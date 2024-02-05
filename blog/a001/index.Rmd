@@ -1,6 +1,6 @@
 ---
 title: ¿Pa' que creamos esta página?
-author: ''
+author: 'David Vanegas'
 date: '2021-03-16'
 image: "images/blog/A1.webp"
 slug: []

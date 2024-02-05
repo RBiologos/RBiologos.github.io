@@ -2,7 +2,7 @@
 title: Relaciones lineales
 author: David Vanegas
 date: '2021-12-22'
-image: https://i.ibb.co/XDRQpnz/ES.png
+image: "https://i.ibb.co/XDRQpnz/ES.png"
 slug: []
 categories:
   - R

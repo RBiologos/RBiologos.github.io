@@ -160,7 +160,6 @@
       <div class="col-lg-8 offset-lg-2">
         <div class="post-single-content">
           
-<script src="https://rbiologos.github.io/blog/a017/index.es_files/header-attrs/header-attrs.js"></script>
 
 
 <p>Algunas investigaciones que realizamos en nuestra vida profesional se basan en conocer y comprender que taxones o especies se encuentran en una determinada región de nuestro interes. Una excelente herramienta que nos ayuda a conocer estos registros es la plataforma GBIF.</p>
@@ -171,29 +170,29 @@
 <div id="contenido-del-post" class="section level1">
 <h1>Contenido del post</h1>
 <ul>
-<li><a href="#1">Introducción</a></li>
-<li><a href="#2">Descarga de datos</a></li>
-<li><a href="#3">Descarga de datos con rgbif</a></li>
-<li><a href="#4">Código en R</a>
+<li><a href="#id_1">Introducción</a></li>
+<li><a href="#id_2">Descarga de datos</a></li>
+<li><a href="#id_3">Descarga de datos con rgbif</a></li>
+<li><a href="#id_4">Código en R</a>
 <ul>
-<li><a href="#5">Descargar datos de una categoría taxonómica en un país</a>
+<li><a href="#id_5">Descargar datos de una categoría taxonómica en un país</a>
 <ul>
-<li><a href="#6">Descarga de datos</a></li>
-<li><a href="#7">Limpieza de datos</a></li>
-<li><a href="#8">Mapeo de ocurrencias</a></li>
-<li><a href="#9">Citaciones</a></li>
+<li><a href="#id_6">Descarga de datos</a></li>
+<li><a href="#id_7">Limpieza de datos</a></li>
+<li><a href="#id_8">Mapeo de ocurrencias</a></li>
+<li><a href="#id_9">Citaciones</a></li>
 </ul></li>
-<li><a href="#10">Descargar datos de varias categorías taxonómicas en una rango de coordenadas</a>
+<li><a href="#id_10">Descargar datos de varias categorías taxonómicas en una rango de coordenadas</a>
 <ul>
-<li><a href="#11">Descarga de datos</a></li>
-<li><a href="#12">Limpieza de datos</a></li>
-<li><a href="#13">Mapeo de ocurrencias</a></li>
-<li><a href="#14">Citaciones</a></li>
+<li><a href="#id_11">Descarga de datos</a></li>
+<li><a href="#id_12">Limpieza de datos</a></li>
+<li><a href="#id_13">Mapeo de ocurrencias</a></li>
+<li><a href="#id_14">Citaciones</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#15">Resumen</a></li>
-<li><a href="#16">Literatura</a></li>
-<li><a href="#17">Más información</a></li>
+<li><a href="#id_15">Resumen</a></li>
+<li><a href="#id_16">Literatura</a></li>
+<li><a href="#id_17">Más información</a></li>
 </ul>
 <center>
 <img src="https://i.ibb.co/4WrdV1v/wakeup.gif" width="350" />
@@ -234,7 +233,6 @@
 <p><a name="4"></a></p>
 <p>Primero cargamos los paquetes necesarios para poder descargar, limpiar y visualizar nuestros datos</p>
 <pre class="r"><code>library(rgbif)
-library(scrubr)
 library(maps)
 library(tidyverse)</code></pre>
 <p>Ahora bien, para poder descagar datos hay dos vías o formas, una se basa en la descarga de datos para una sola categoría taxonómica y la otra para varias categorías taxonómicas.</p>
@@ -278,24 +276,24 @@ library(tidyverse)</code></pre>
 <p></br></p>
 <pre class="r"><code>gbif_data$meta</code></pre>
 <pre><code>## $offset
-## [1] 1200
+## [1] 1800
 ## 
 ## $limit
-## [1] 286
+## [1] 40
 ## 
 ## $endOfRecords
 ## [1] TRUE
 ## 
 ## $count
-## [1] 1486</code></pre>
+## [1] 1840</code></pre>
 <pre class="r"><code>names(gbif_data$data)</code></pre>
 <pre><code>##   [1] &quot;key&quot;                            &quot;scientificName&quot;                
 ##   [3] &quot;decimalLatitude&quot;                &quot;decimalLongitude&quot;              
 ##   [5] &quot;issues&quot;                         &quot;datasetKey&quot;                    
 ##   [7] &quot;publishingOrgKey&quot;               &quot;installationKey&quot;               
-##   [9] &quot;publishingCountry&quot;              &quot;protocol&quot;                      
-##  [11] &quot;lastCrawled&quot;                    &quot;lastParsed&quot;                    
-##  [13] &quot;crawlId&quot;                        &quot;hostingOrganizationKey&quot;        
+##   [9] &quot;hostingOrganizationKey&quot;         &quot;publishingCountry&quot;             
+##  [11] &quot;protocol&quot;                       &quot;lastCrawled&quot;                   
+##  [13] &quot;lastParsed&quot;                     &quot;crawlId&quot;                       
 ##  [15] &quot;basisOfRecord&quot;                  &quot;occurrenceStatus&quot;              
 ##  [17] &quot;lifeStage&quot;                      &quot;taxonKey&quot;                      
 ##  [19] &quot;kingdomKey&quot;                     &quot;phylumKey&quot;                     
@@ -308,48 +306,52 @@ library(tidyverse)</code></pre>
 ##  [33] &quot;species&quot;                        &quot;genericName&quot;                   
 ##  [35] &quot;specificEpithet&quot;                &quot;taxonRank&quot;                     
 ##  [37] &quot;taxonomicStatus&quot;                &quot;iucnRedListCategory&quot;           
-##  [39] &quot;dateIdentified&quot;                 &quot;coordinateUncertaintyInMeters&quot; 
-##  [41] &quot;elevation&quot;                      &quot;elevationAccuracy&quot;             
-##  [43] &quot;continent&quot;                      &quot;stateProvince&quot;                 
-##  [45] &quot;year&quot;                           &quot;month&quot;                         
-##  [47] &quot;day&quot;                            &quot;eventDate&quot;                     
-##  [49] &quot;lastInterpreted&quot;                &quot;license&quot;                       
-##  [51] &quot;organismQuantity&quot;               &quot;organismQuantityType&quot;          
-##  [53] &quot;sampleSizeUnit&quot;                 &quot;sampleSizeValue&quot;               
-##  [55] &quot;isInCluster&quot;                    &quot;inCluster&quot;                     
-##  [57] &quot;geodeticDatum&quot;                  &quot;class&quot;                         
-##  [59] &quot;countryCode&quot;                    &quot;country&quot;                       
-##  [61] &quot;eventID&quot;                        &quot;recordNumber&quot;                  
-##  [63] &quot;identifier&quot;                     &quot;habitat&quot;                       
-##  [65] &quot;dynamicProperties&quot;              &quot;samplingEffort&quot;                
-##  [67] &quot;verbatimSRS&quot;                    &quot;locality&quot;                      
-##  [69] &quot;county&quot;                         &quot;verbatimCoordinateSystem&quot;      
-##  [71] &quot;eventRemarks&quot;                   &quot;gbifID&quot;                        
-##  [73] &quot;collectionCode&quot;                 &quot;occurrenceID&quot;                  
-##  [75] &quot;preparations&quot;                   &quot;recordedBy&quot;                    
-##  [77] &quot;catalogNumber&quot;                  &quot;locationRemarks&quot;               
-##  [79] &quot;institutionCode&quot;                &quot;eventTime&quot;                     
-##  [81] &quot;samplingProtocol&quot;               &quot;parentEventID&quot;                 
-##  [83] &quot;identifiedBy&quot;                   &quot;higherClassification&quot;          
-##  [85] &quot;projectId&quot;                      &quot;sex&quot;                           
-##  [87] &quot;identificationReferences&quot;       &quot;institutionID&quot;                 
-##  [89] &quot;municipality&quot;                   &quot;datasetName&quot;                   
-##  [91] &quot;language&quot;                       &quot;type&quot;                          
-##  [93] &quot;vernacularName&quot;                 &quot;organismID&quot;                    
-##  [95] &quot;datasetID&quot;                      &quot;georeferenceProtocol&quot;          
-##  [97] &quot;individualCount&quot;                &quot;rightsHolder&quot;                  
-##  [99] &quot;verbatimElevation&quot;              &quot;georeferencedBy&quot;               
-## [101] &quot;previousIdentifications&quot;        &quot;ownerInstitutionCode&quot;          
-## [103] &quot;occurrenceRemarks&quot;              &quot;accessRights&quot;                  
-## [105] &quot;name&quot;                           &quot;coordinatePrecision&quot;           
-## [107] &quot;nomenclaturalCode&quot;              &quot;fieldNumber&quot;                   
-## [109] &quot;disposition&quot;                    &quot;otherCatalogNumbers&quot;           
-## [111] &quot;collectionID&quot;                   &quot;georeferencedDate&quot;             
-## [113] &quot;higherGeography&quot;                &quot;verbatimEventDate&quot;             
-## [115] &quot;georeferenceVerificationStatus&quot; &quot;georeferenceRemarks&quot;           
-## [117] &quot;georeferenceSources&quot;            &quot;modified&quot;                      
-## [119] &quot;verbatimLocality&quot;               &quot;materialSampleID&quot;              
-## [121] &quot;reproductiveCondition&quot;          &quot;identificationRemarks&quot;</code></pre>
+##  [39] &quot;dateIdentified&quot;                 &quot;elevation&quot;                     
+##  [41] &quot;elevationAccuracy&quot;              &quot;continent&quot;                     
+##  [43] &quot;stateProvince&quot;                  &quot;year&quot;                          
+##  [45] &quot;month&quot;                          &quot;day&quot;                           
+##  [47] &quot;eventDate&quot;                      &quot;startDayOfYear&quot;                
+##  [49] &quot;endDayOfYear&quot;                   &quot;lastInterpreted&quot;               
+##  [51] &quot;license&quot;                        &quot;organismQuantity&quot;              
+##  [53] &quot;isSequenced&quot;                    &quot;isInCluster&quot;                   
+##  [55] &quot;recordedBy&quot;                     &quot;identifiedBy&quot;                  
+##  [57] &quot;preparations&quot;                   &quot;samplingProtocol&quot;              
+##  [59] &quot;geodeticDatum&quot;                  &quot;class&quot;                         
+##  [61] &quot;countryCode&quot;                    &quot;gbifRegion&quot;                    
+##  [63] &quot;country&quot;                        &quot;publishedByGbifRegion&quot;         
+##  [65] &quot;identifier&quot;                     &quot;recordNumber&quot;                  
+##  [67] &quot;catalogNumber&quot;                  &quot;habitat&quot;                       
+##  [69] &quot;institutionCode&quot;                &quot;county&quot;                        
+##  [71] &quot;locality&quot;                       &quot;eventRemarks&quot;                  
+##  [73] &quot;gbifID&quot;                         &quot;collectionCode&quot;                
+##  [75] &quot;occurrenceID&quot;                   &quot;projectId&quot;                     
+##  [77] &quot;coordinateUncertaintyInMeters&quot;  &quot;organismQuantityType&quot;          
+##  [79] &quot;sampleSizeUnit&quot;                 &quot;sampleSizeValue&quot;               
+##  [81] &quot;eventID&quot;                        &quot;dynamicProperties&quot;             
+##  [83] &quot;verbatimSRS&quot;                    &quot;samplingEffort&quot;                
+##  [85] &quot;verbatimCoordinateSystem&quot;       &quot;type&quot;                          
+##  [87] &quot;locationRemarks&quot;                &quot;eventTime&quot;                     
+##  [89] &quot;parentEventID&quot;                  &quot;higherClassification&quot;          
+##  [91] &quot;individualCount&quot;                &quot;verbatimEventDate&quot;             
+##  [93] &quot;institutionID&quot;                  &quot;municipality&quot;                  
+##  [95] &quot;language&quot;                       &quot;disposition&quot;                   
+##  [97] &quot;collectionID&quot;                   &quot;sex&quot;                           
+##  [99] &quot;networkKeys&quot;                    &quot;georeferenceProtocol&quot;          
+## [101] &quot;datasetID&quot;                      &quot;datasetName&quot;                   
+## [103] &quot;identificationReferences&quot;       &quot;vernacularName&quot;                
+## [105] &quot;organismID&quot;                     &quot;name&quot;                          
+## [107] &quot;georeferencedBy&quot;                &quot;rightsHolder&quot;                  
+## [109] &quot;previousIdentifications&quot;        &quot;ownerInstitutionCode&quot;          
+## [111] &quot;occurrenceRemarks&quot;              &quot;accessRights&quot;                  
+## [113] &quot;verbatimElevation&quot;              &quot;coordinatePrecision&quot;           
+## [115] &quot;otherCatalogNumbers&quot;            &quot;fieldNumber&quot;                   
+## [117] &quot;higherGeography&quot;                &quot;institutionKey&quot;                
+## [119] &quot;collectionKey&quot;                  &quot;georeferencedDate&quot;             
+## [121] &quot;georeferenceVerificationStatus&quot; &quot;georeferenceRemarks&quot;           
+## [123] &quot;georeferenceSources&quot;            &quot;modified&quot;                      
+## [125] &quot;verbatimLocality&quot;               &quot;materialSampleID&quot;              
+## [127] &quot;reproductiveCondition&quot;          &quot;subfamily&quot;                     
+## [129] &quot;verbatimIdentification&quot;         &quot;identificationRemarks&quot;</code></pre>
 </div>
 <div id="limpieza-de-datos" class="section level3">
 <h3>Limpieza de datos</h3>
@@ -361,41 +363,42 @@ library(tidyverse)</code></pre>
                                         &quot;elevation&quot;,
                                         &quot;stateProvince&quot;)]
 head(myspecies_coords)</code></pre>
-<pre><code>## # A tibble: 6 x 5
+<pre><code>## # A tibble: 6 × 5
 ##   scientificName        decimalLongitude decimalLatitude elevation stateProvince
 ##   &lt;chr&gt;                            &lt;dbl&gt;           &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;        
-## 1 Onthophagus acuminat~            -73.7            7.30       107 Santander    
-## 2 Onthophagus acuminat~            -73.7            7.30       109 Santander    
-## 3 Onthophagus acuminat~            -75.2            2.94       562 Huila        
-## 4 Onthophagus acuminat~            -75.2            2.94       562 Huila        
-## 5 Onthophagus acuminat~            -75.2            2.94       562 Huila        
-## 6 Onthophagus acuminat~            -75.2            2.94       562 Huila</code></pre>
-<p>También podemos observar un resumen de los datos, como cantidad, departamentos de las ocurrencias, entre otros</p>
+## 1 Onthophagus acuminat…            -73.7            7.30      99.8 Santander    
+## 2 Onthophagus acuminat…            -73.7            7.30      98.0 Santander    
+## 3 Onthophagus acuminat…            -73.7            7.30     105.  Santander    
+## 4 Onthophagus acuminat…            -73.7            7.30     102.  Santander    
+## 5 Onthophagus acuminat…            -73.7            7.30     102.  Santander    
+## 6 Onthophagus acuminat…            -73.7            7.30      99.4 Santander</code></pre>
+<p>También podemos observar un resumen de los datos, como cantidad, departamentos de las ocurrencias, entre otros.</p>
 <pre class="r"><code># Conoceremos la cantidad de registros
 dim(myspecies_coords)[1]</code></pre>
-<pre><code>## [1] 1486</code></pre>
+<pre><code>## [1] 1840</code></pre>
 <pre class="r"><code># Cantidad de datos por departamento
 myspecies_coords  %&gt;%
     count(stateProvince, sort = TRUE)</code></pre>
-<pre><code>## # A tibble: 16 x 2
+<pre><code>## # A tibble: 17 × 2
 ##    stateProvince       n
 ##    &lt;chr&gt;           &lt;int&gt;
 ##  1 Sucre             766
-##  2 Santander         188
+##  2 Santander         541
 ##  3 La Guajira        141
-##  4 Huila              90
+##  4 Huila              92
 ##  5 Chocó              57
-##  6 Valle del Cauca    43
-##  7 Bolívar            40
-##  8 Tolima             39
-##  9 Antioquia          37
+##  6 Bolívar            40
+##  7 Tolima             40
+##  8 Antioquia          37
+##  9 Valle del Cauca    37
 ## 10 Magdalena          33
-## 11 Quindío            27
+## 11 Quindío            28
 ## 12 Cundinamarca        9
 ## 13 Nariño              7
 ## 14 Cesar               6
-## 15 Risaralda           2
-## 16 Córdoba             1</code></pre>
+## 15 Boyacá              3
+## 16 Risaralda           2
+## 17 Córdoba             1</code></pre>
 <p>Ahora guardaremos nuestros datos en un archivo tipo <em><em>csv</em></em> para poder tener la información en nuestra computadora.</p>
 <pre class="r"><code>write.csv(myspecies_coords, &#39;species.csv&#39;, row.names = TRUE)</code></pre>
 </div>
@@ -437,181 +440,219 @@ dev.off()</code></pre>
 <p><a name="9"></a></p>
 <p>Finalmente obtenemos la citación de las ocurrencias</p>
 <pre class="r"><code>gbif_citation(gbif_data)</code></pre>
+<pre><code>## Warning: gbif_citation() for occ_search() and occ_data() is deprecated. 
+## Use rgbif::occ_download() or rgbif::derived_dataset() instead.</code></pre>
 <pre><code>## [[1]]
 ## &lt;&lt;rgbif citation&gt;&gt;
-##    Citation: González F A, Corral Gómez J N, Cobos Hernandez R M, Vanegas
-##         Alarcón D A, Silva Tavera D F (2022). Línea base general de escarabajos
-##         para el valle medio del Magdalena - VMM. Version 1.1. Instituto de
-##         Investigación de Recursos Biológicos Alexander von Humboldt. Sampling
-##         event dataset https://doi.org/10.15472/lgpfm7 accessed via GBIF.org on
-##         2022-03-06.. Accessed from R via rgbif
-##         (https://github.com/ropensci/rgbif) on 2022-03-05
+##    Citation: Borja-Acosta K G, Neita-Moreno J (2024). Colección de Entomología
+##         del Instituto de Investigación de Recursos Biológicos Alexander von
+##         Humboldt (IAvH-E). Version 2.12. Instituto de Investigación de Recursos
+##         Biológicos Alexander von Humboldt. Occurrence dataset
+##         https://doi.org/10.15472/vmpedy accessed via GBIF.org on 2024-02-05..
+##         Accessed from R via rgbif (https://github.com/ropensci/rgbif) on
+##         2024-02-05
 ##    Rights: http://creativecommons.org/licenses/by-nc/4.0/legalcode
 ## 
 ## [[2]]
 ## &lt;&lt;rgbif citation&gt;&gt;
-##    Citation: Martínez Silva P, Gutiérrez Bautista H H (2020). Coleópteros
-##         presentes en un proceso de restauración pasiva en bosque seco tropical.
-##         Version 2.2. Corporación Universitaria del Huila. Occurrence dataset
-##         https://doi.org/10.15472/2qq6hc accessed via GBIF.org on 2022-03-06..
-##         Accessed from R via rgbif (https://github.com/ropensci/rgbif) on
-##         2022-03-05
+##    Citation: Instituto de Investigación de Recursos Biológicos Alexander von
+##         Humboldt, Agencia Nacional de Hidrocarburos (2022). Línea base general
+##         de escarabajos para el valle medio del Magdalena - VMM. Version 1.2.
+##         Instituto de Investigación de Recursos Biológicos Alexander von
+##         Humboldt. Sampling event dataset https://doi.org/10.15472/lgpfm7
+##         accessed via GBIF.org on 2024-02-05.. Accessed from R via rgbif
+##         (https://github.com/ropensci/rgbif) on 2024-02-05
 ##    Rights: http://creativecommons.org/licenses/by-nc/4.0/legalcode
 ## 
 ## [[3]]
+## &lt;&lt;rgbif citation&gt;&gt;
+##    Citation: Carvajal Cogollo J E, Morales Alba A F, Martínez Dueñas D C,
+##         Quiroga Huertas K A, Bello Guio G, Eguis Avendaño J A, García Monroy J
+##         S, Gómez Camargo J, Serrato Rivera Y G, Peña Ramírez L J, Pineda
+##         Cendales S, Morales González Ó E, Higuera Rojas D F, Sarmiento Garavito
+##         L P, Pérez Gómez D K, Morales González O E (2022). Caracterización de
+##         fauna en diferentes gradientes altitudinales del departamento de
+##         Boyacá, Colombia. Version 1.5. Universidad Pedagógica y Tecnológica de
+##         Colombia. Occurrence dataset https://doi.org/10.15472/glb3hd accessed
+##         via GBIF.org on 2024-02-05.. Accessed from R via rgbif
+##         (https://github.com/ropensci/rgbif) on 2024-02-05
+##    Rights: http://creativecommons.org/licenses/by/4.0/legalcode
+## 
+## [[4]]
+## &lt;&lt;rgbif citation&gt;&gt;
+##    Citation: Ecopetrol. S.A., Instituto de Investigación de Recursos Biológicos
+##         Alexander von Humboldt (2022). Entomofauna de la Ecoreserva La Tribuna
+##         (Neiva, Huila) - Proyecto FIBRAS. Version 1.1. Instituto de
+##         Investigación de Recursos Biológicos Alexander von Humboldt. Occurrence
+##         dataset https://doi.org/10.15472/yr14ff accessed via GBIF.org on
+##         2024-02-05.. Accessed from R via rgbif
+##         (https://github.com/ropensci/rgbif) on 2024-02-05
+##    Rights: http://creativecommons.org/licenses/by-nc/4.0/legalcode
+## 
+## [[5]]
+## &lt;&lt;rgbif citation&gt;&gt;
+##    Citation: Martínez Silva P, Gutiérrez Bautista H H (2020). Coleópteros
+##         presentes en un proceso de restauración pasiva en bosque seco tropical.
+##         Version 2.2. Corporación Universitaria del Huila. Occurrence dataset
+##         https://doi.org/10.15472/2qq6hc accessed via GBIF.org on 2024-02-05..
+##         Accessed from R via rgbif (https://github.com/ropensci/rgbif) on
+##         2024-02-05
+##    Rights: http://creativecommons.org/licenses/by-nc/4.0/legalcode
+## 
+## [[6]]
 ## &lt;&lt;rgbif citation&gt;&gt;
 ##    Citation: Neita J C, Borja-Acosta K (2021). Insectos del municipio
 ##         Cimitarra, Santander - Proyecto Santander BIO. Version 1.2. Instituto
 ##         de Investigación de Recursos Biológicos Alexander von Humboldt.
 ##         Occurrence dataset https://doi.org/10.15472/po6pzh accessed via
-##         GBIF.org on 2022-03-06.. Accessed from R via rgbif
-##         (https://github.com/ropensci/rgbif) on 2022-03-05
+##         GBIF.org on 2024-02-05.. Accessed from R via rgbif
+##         (https://github.com/ropensci/rgbif) on 2024-02-05
 ##    Rights: http://creativecommons.org/licenses/by-nc/4.0/legalcode
 ## 
-## [[4]]
+## [[7]]
 ## &lt;&lt;rgbif citation&gt;&gt;
 ##    Citation: Lopera A, Lizcano D J (2021). Registros biológicos asociados al
 ##         monitoreo de la diversidad de escarabajos en paisajes ganaderos de
 ##         bosque 2013 - 2017. Asociación GAICA. Occurrence dataset
-##         https://doi.org/10.15472/6ttvzs accessed via GBIF.org on 2022-03-06..
+##         https://doi.org/10.15472/6ttvzs accessed via GBIF.org on 2024-02-05..
 ##         Accessed from R via rgbif (https://github.com/ropensci/rgbif) on
-##         2022-03-05
+##         2024-02-05
 ##    Rights: http://creativecommons.org/licenses/by-nc/4.0/legalcode
 ## 
-## [[5]]
+## [[8]]
 ## &lt;&lt;rgbif citation&gt;&gt;
-##    Citation: Mendivil Nieto J A, Giraldo Echeverri C, Quevedo Vega C J (2020).
+##    Citation: Mendivil Nieto J A, Giraldo Echeverri C, Quevedo Vega C J (2022).
 ##         Escarabajos estercoleros asociados a sistemas de ganadería sostenible
-##         en diferentes regiones de Colombia. Version 2.3. Fundación Centro para
+##         en diferentes regiones de Colombia. Version 2.4. Fundación Centro para
 ##         la Investigación en Sistemas Sostenibles de Producción Agropecuaria -
 ##         Cipav. Occurrence dataset https://doi.org/10.15472/yje84v accessed via
-##         GBIF.org on 2022-03-06.. Accessed from R via rgbif
-##         (https://github.com/ropensci/rgbif) on 2022-03-05
+##         GBIF.org on 2024-02-05.. Accessed from R via rgbif
+##         (https://github.com/ropensci/rgbif) on 2024-02-05
 ##    Rights: http://creativecommons.org/publicdomain/zero/1.0/legalcode
 ## 
-## [[6]]
+## [[9]]
 ## &lt;&lt;rgbif citation&gt;&gt;
-##    Citation: Murillo Barahona D A, Rengifo Murillo L (2021). Colección
-##         Entomológica de la Universidad Tecnológica del Chocó. Version 6.4.
+##    Citation: Murillo Barahona D A, Rengifo Murillo L (2023). Colección
+##         Entomológica de la Universidad Tecnológica del Chocó. Version 6.5.
 ##         Universidad Tecnológica del Chocó. Occurrence dataset
-##         https://doi.org/10.15472/rmbpsh accessed via GBIF.org on 2022-03-06..
+##         https://doi.org/10.15472/rmbpsh accessed via GBIF.org on 2024-02-05..
 ##         Accessed from R via rgbif (https://github.com/ropensci/rgbif) on
-##         2022-03-05
+##         2024-02-05
 ##    Rights: http://creativecommons.org/publicdomain/zero/1.0/legalcode
 ## 
-## [[7]]
+## [[10]]
 ## &lt;&lt;rgbif citation&gt;&gt;
 ##    Citation: Lopera A, Quintana Vargas A (2021). Coleópteros de los bosques
 ##         montanos del Oriente Antioqueño, Cañón del río Melcocho, en el
 ##         municipio de El Carmen de Viboral, Antioquia - Proyecto Colombia BIO.
 ##         Version 1.3. Instituto de Investigación de Recursos Biológicos
 ##         Alexander von Humboldt. Occurrence dataset
-##         https://doi.org/10.15472/npzc22 accessed via GBIF.org on 2022-03-06..
+##         https://doi.org/10.15472/npzc22 accessed via GBIF.org on 2024-02-05..
 ##         Accessed from R via rgbif (https://github.com/ropensci/rgbif) on
-##         2022-03-05
+##         2024-02-05
 ##    Rights: http://creativecommons.org/licenses/by-nc/4.0/legalcode
 ## 
-## [[8]]
+## [[11]]
 ## &lt;&lt;rgbif citation&gt;&gt;
-##    Citation: Gómez-Posada C, Borja-Acosta K (2022). Colección de Entomología
+##    Citation: Borja-Acosta K G, Leyton Ramos L M (2024). Colección de Tejidos
 ##         del Instituto de Investigación de Recursos Biológicos Alexander von
-##         Humboldt (IAvH-E). Version 2.6. Instituto de Investigación de Recursos
-##         Biológicos Alexander von Humboldt. Occurrence dataset
-##         https://doi.org/10.15472/vmpedy accessed via GBIF.org on 2022-03-06..
+##         Humboldt (IAvH-CT). Version 20.9. Instituto de Investigación de
+##         Recursos Biológicos Alexander von Humboldt. Occurrence dataset
+##         https://doi.org/10.15472/9uddlh accessed via GBIF.org on 2024-02-05..
 ##         Accessed from R via rgbif (https://github.com/ropensci/rgbif) on
-##         2022-03-05
+##         2024-02-05
 ##    Rights: http://creativecommons.org/licenses/by-nc/4.0/legalcode
 ## 
-## [[9]]
-## &lt;&lt;rgbif citation&gt;&gt;
-##    Citation: Borja-Acosta K (2022). Colección de Tejidos del Instituto de
-##         Investigación de Recursos Biológicos Alexander von Humboldt (IAvH-CT).
-##         Version 20.4. Instituto de Investigación de Recursos Biológicos
-##         Alexander von Humboldt. Occurrence dataset
-##         https://doi.org/10.15472/9uddlh accessed via GBIF.org on 2022-03-06..
-##         Accessed from R via rgbif (https://github.com/ropensci/rgbif) on
-##         2022-03-05
-##    Rights: http://creativecommons.org/licenses/by-nc/4.0/legalcode
-## 
-## [[10]]
+## [[12]]
 ## &lt;&lt;rgbif citation&gt;&gt;
 ##    Citation: Bonell Rojas W Y (2018). Caracterización biológica en la Serranía
 ##         de San Lucas 2015. Version 2.0. Parques Nacionales Naturales de
 ##         Colombia. Occurrence dataset https://doi.org/10.15472/uarl1x accessed
-##         via GBIF.org on 2022-03-06.. Accessed from R via rgbif
-##         (https://github.com/ropensci/rgbif) on 2022-03-05
+##         via GBIF.org on 2024-02-05.. Accessed from R via rgbif
+##         (https://github.com/ropensci/rgbif) on 2024-02-05
 ##    Rights: http://creativecommons.org/licenses/by-nc/4.0/legalcode
 ## 
-## [[11]]
+## [[13]]
+## &lt;&lt;rgbif citation&gt;&gt;
+##    Citation: Ramirez Hernandez L M (2019). Estudio de Biodiversidad Mina
+##         Calenturitas, Temporada de Lluvias. INERCO Consultoría Colombia.
+##         Occurrence dataset https://doi.org/10.15472/uecnoz accessed via
+##         GBIF.org on 2024-02-05.. Accessed from R via rgbif
+##         (https://github.com/ropensci/rgbif) on 2024-02-05
+##    Rights: http://creativecommons.org/licenses/by/4.0/legalcode
+## 
+## [[14]]
 ## &lt;&lt;rgbif citation&gt;&gt;
 ##    Citation: Quintana Vargas A (2021). Biodiversidad de un bosque seco tropical
 ##         del Valle Medio del río Magdalena: evaluación integrada a través de
 ##         multitaxones. Version 1.2. Instituto de Investigación de Recursos
 ##         Biológicos Alexander von Humboldt. Occurrence dataset
-##         https://doi.org/10.15472/ptmv1d accessed via GBIF.org on 2022-03-06..
+##         https://doi.org/10.15472/ptmv1d accessed via GBIF.org on 2024-02-05..
 ##         Accessed from R via rgbif (https://github.com/ropensci/rgbif) on
-##         2022-03-05
+##         2024-02-05
 ##    Rights: http://creativecommons.org/licenses/by-nc/4.0/legalcode
 ## 
-## [[12]]
-## &lt;&lt;rgbif citation&gt;&gt;
-##    Citation: Ramirez Hernandez L M (2019). Estudio de Biodiversidad Mina
-##         Calenturitas, Temporada de Lluvias. INERCO Consultoría Colombia.
-##         Occurrence dataset https://doi.org/10.15472/uecnoz accessed via
-##         GBIF.org on 2022-03-06.. Accessed from R via rgbif
-##         (https://github.com/ropensci/rgbif) on 2022-03-05
-##    Rights: http://creativecommons.org/licenses/by/4.0/legalcode
-## 
-## [[13]]
+## [[15]]
 ## &lt;&lt;rgbif citation&gt;&gt;
 ##    Citation: Guañarita Bañol A M (2021). Caracterizaciones rápidas de
 ##         biodiversidad en grupos biológicos de la planicie del valle del río
 ##         Cauca. Version 4.2. Universidad Icesi. Occurrence dataset
-##         https://doi.org/10.15472/dbjjay accessed via GBIF.org on 2022-03-06..
+##         https://doi.org/10.15472/dbjjay accessed via GBIF.org on 2024-02-05..
 ##         Accessed from R via rgbif (https://github.com/ropensci/rgbif) on
-##         2022-03-05
+##         2024-02-05
 ##    Rights: http://creativecommons.org/licenses/by-nc/4.0/legalcode
 ## 
-## [[14]]
+## [[16]]
 ## &lt;&lt;rgbif citation&gt;&gt;
 ##    Citation: Hurtado Guerra A M (2020). Caracterización biológica de la ventana
 ##         Beltrán, corregimiento Paquiló, Municipio de Beltrán, Cundinamarca.
 ##         Version 2.4. Instituto de Investigación de Recursos Biológicos
 ##         Alexander von Humboldt. Occurrence dataset
-##         https://doi.org/10.15472/hr8ml2 accessed via GBIF.org on 2022-03-06..
+##         https://doi.org/10.15472/hr8ml2 accessed via GBIF.org on 2024-02-05..
 ##         Accessed from R via rgbif (https://github.com/ropensci/rgbif) on
-##         2022-03-05
+##         2024-02-05
 ##    Rights: http://creativecommons.org/licenses/by-nc/4.0/legalcode
 ## 
-## [[15]]
+## [[17]]
 ## &lt;&lt;rgbif citation&gt;&gt;
 ##    Citation: González A (2021). Escarabajos coprófagos (Coleoptera:
 ##         Scarabaeidae: Scarabaeinae) de bosques secos Colombianos de la
 ##         Colección Entomológica del Instituto Alexander von Humboldt. Version
 ##         4.5. Instituto de Investigación de Recursos Biológicos Alexander von
 ##         Humboldt. Occurrence dataset https://doi.org/10.15472/hjh6ys accessed
-##         via GBIF.org on 2022-03-06.. Accessed from R via rgbif
-##         (https://github.com/ropensci/rgbif) on 2022-03-05
+##         via GBIF.org on 2024-02-05.. Accessed from R via rgbif
+##         (https://github.com/ropensci/rgbif) on 2024-02-05
 ##    Rights: http://creativecommons.org/licenses/by-nc/4.0/legalcode
 ## 
-## [[16]]
+## [[18]]
+## &lt;&lt;rgbif citation&gt;&gt;
+##    Citation: Vergara Navarro E V, González Almario C, Sandoval Caceres Y P
+##         (2022). Colección Taxonómica Nacional de Insectos “Luis María Murillo”
+##         (CTNI). Version 2.6. Corporación Colombiana de Investigación
+##         Agropecuaria - AGROSAVIA. Occurrence dataset
+##         https://doi.org/10.15472/fvudyo accessed via GBIF.org on 2024-02-05..
+##         Accessed from R via rgbif (https://github.com/ropensci/rgbif) on
+##         2024-02-05
+##    Rights: http://creativecommons.org/licenses/by-nc/4.0/legalcode
+## 
+## [[19]]
 ## &lt;&lt;rgbif citation&gt;&gt;
 ##    Citation: León González J (2021). Escarabajos coprófagos (Scarabaeidae:
 ##         Scarabaeinae) del eje cafetero Colombiano. Version 7.3. Instituto de
 ##         Investigación de Recursos Biológicos Alexander von Humboldt. Occurrence
 ##         dataset https://doi.org/10.15472/dm9u19 accessed via GBIF.org on
-##         2022-03-06.. Accessed from R via rgbif
-##         (https://github.com/ropensci/rgbif) on 2022-03-05
+##         2024-02-05.. Accessed from R via rgbif
+##         (https://github.com/ropensci/rgbif) on 2024-02-05
 ##    Rights: http://creativecommons.org/licenses/by-nc/4.0/legalcode
 ## 
-## [[17]]
+## [[20]]
 ## &lt;&lt;rgbif citation&gt;&gt;
 ##    Citation: Jaramillo N, Marín J D, Wolff Echeverri M, Duque Veléz P, Veléz
-##         Bravo A, Jaramillo J G (2022). Colección Entomológica de Piedras
-##         Blancas. Version 2.5. Museo Entomológico de Comfenalco - Antioquia.
+##         Bravo A, Jaramillo J G (2023). Colección Entomológica de Piedras
+##         Blancas. Version 2.6. Museo Entomológico de Comfenalco - Antioquia.
 ##         Occurrence dataset https://doi.org/10.15472/xblw2v accessed via
-##         GBIF.org on 2022-03-06.. Accessed from R via rgbif
-##         (https://github.com/ropensci/rgbif) on 2022-03-05
+##         GBIF.org on 2024-02-05.. Accessed from R via rgbif
+##         (https://github.com/ropensci/rgbif) on 2024-02-05
 ##    Rights: http://creativecommons.org/licenses/by/4.0/legalcode</code></pre>
 </div>
 </div>
@@ -649,54 +690,58 @@ dev.off()</code></pre>
 <pre class="r"><code>names(gbif_data2[[myspecies2[1]]]$meta)</code></pre>
 <pre><code>## [1] &quot;offset&quot;       &quot;limit&quot;        &quot;endOfRecords&quot; &quot;count&quot;</code></pre>
 <pre class="r"><code>names(gbif_data2[[myspecies2[1]]]$data)</code></pre>
-<pre><code>##  [1] &quot;key&quot;                      &quot;scientificName&quot;          
-##  [3] &quot;decimalLatitude&quot;          &quot;decimalLongitude&quot;        
-##  [5] &quot;issues&quot;                   &quot;datasetKey&quot;              
-##  [7] &quot;publishingOrgKey&quot;         &quot;installationKey&quot;         
-##  [9] &quot;publishingCountry&quot;        &quot;protocol&quot;                
-## [11] &quot;lastCrawled&quot;              &quot;lastParsed&quot;              
-## [13] &quot;crawlId&quot;                  &quot;projectId&quot;               
-## [15] &quot;hostingOrganizationKey&quot;   &quot;basisOfRecord&quot;           
-## [17] &quot;occurrenceStatus&quot;         &quot;lifeStage&quot;               
-## [19] &quot;taxonKey&quot;                 &quot;kingdomKey&quot;              
-## [21] &quot;phylumKey&quot;                &quot;classKey&quot;                
-## [23] &quot;orderKey&quot;                 &quot;familyKey&quot;               
-## [25] &quot;genusKey&quot;                 &quot;speciesKey&quot;              
-## [27] &quot;acceptedTaxonKey&quot;         &quot;acceptedScientificName&quot;  
-## [29] &quot;kingdom&quot;                  &quot;phylum&quot;                  
-## [31] &quot;order&quot;                    &quot;family&quot;                  
-## [33] &quot;genus&quot;                    &quot;species&quot;                 
-## [35] &quot;genericName&quot;              &quot;specificEpithet&quot;         
-## [37] &quot;taxonRank&quot;                &quot;taxonomicStatus&quot;         
-## [39] &quot;iucnRedListCategory&quot;      &quot;dateIdentified&quot;          
-## [41] &quot;elevation&quot;                &quot;elevationAccuracy&quot;       
-## [43] &quot;continent&quot;                &quot;stateProvince&quot;           
-## [45] &quot;year&quot;                     &quot;month&quot;                   
-## [47] &quot;day&quot;                      &quot;eventDate&quot;               
-## [49] &quot;lastInterpreted&quot;          &quot;license&quot;                 
-## [51] &quot;organismQuantity&quot;         &quot;organismQuantityType&quot;    
-## [53] &quot;isInCluster&quot;              &quot;inCluster&quot;               
-## [55] &quot;geodeticDatum&quot;            &quot;class&quot;                   
-## [57] &quot;countryCode&quot;              &quot;country&quot;                 
-## [59] &quot;recordNumber&quot;             &quot;identifier&quot;              
-## [61] &quot;habitat&quot;                  &quot;dynamicProperties&quot;       
-## [63] &quot;georeferenceProtocol&quot;     &quot;verbatimSRS&quot;             
-## [65] &quot;locality&quot;                 &quot;county&quot;                  
-## [67] &quot;verbatimCoordinateSystem&quot; &quot;gbifID&quot;                  
-## [69] &quot;collectionCode&quot;           &quot;occurrenceID&quot;            
-## [71] &quot;preparations&quot;             &quot;recordedBy&quot;              
-## [73] &quot;catalogNumber&quot;            &quot;institutionCode&quot;         
-## [75] &quot;samplingProtocol&quot;         &quot;identifiedBy&quot;            
-## [77] &quot;individualCount&quot;          &quot;samplingEffort&quot;          
-## [79] &quot;vernacularName&quot;           &quot;eventTime&quot;               
-## [81] &quot;modified&quot;                 &quot;eventRemarks&quot;            
-## [83] &quot;type&quot;                     &quot;institutionID&quot;           
-## [85] &quot;georeferencedBy&quot;          &quot;municipality&quot;            
-## [87] &quot;datasetName&quot;              &quot;verbatimLocality&quot;        
-## [89] &quot;language&quot;                 &quot;locationRemarks&quot;         
-## [91] &quot;datasetID&quot;                &quot;occurrenceRemarks&quot;       
-## [93] &quot;verbatimElevation&quot;        &quot;georeferenceRemarks&quot;     
-## [95] &quot;name&quot;</code></pre>
+<pre><code>##   [1] &quot;key&quot;                      &quot;scientificName&quot;          
+##   [3] &quot;decimalLatitude&quot;          &quot;decimalLongitude&quot;        
+##   [5] &quot;issues&quot;                   &quot;datasetKey&quot;              
+##   [7] &quot;publishingOrgKey&quot;         &quot;installationKey&quot;         
+##   [9] &quot;hostingOrganizationKey&quot;   &quot;publishingCountry&quot;       
+##  [11] &quot;protocol&quot;                 &quot;lastCrawled&quot;             
+##  [13] &quot;lastParsed&quot;               &quot;crawlId&quot;                 
+##  [15] &quot;projectId&quot;                &quot;basisOfRecord&quot;           
+##  [17] &quot;individualCount&quot;          &quot;occurrenceStatus&quot;        
+##  [19] &quot;sex&quot;                      &quot;lifeStage&quot;               
+##  [21] &quot;taxonKey&quot;                 &quot;kingdomKey&quot;              
+##  [23] &quot;phylumKey&quot;                &quot;classKey&quot;                
+##  [25] &quot;orderKey&quot;                 &quot;familyKey&quot;               
+##  [27] &quot;genusKey&quot;                 &quot;speciesKey&quot;              
+##  [29] &quot;acceptedTaxonKey&quot;         &quot;acceptedScientificName&quot;  
+##  [31] &quot;kingdom&quot;                  &quot;phylum&quot;                  
+##  [33] &quot;order&quot;                    &quot;family&quot;                  
+##  [35] &quot;genus&quot;                    &quot;species&quot;                 
+##  [37] &quot;genericName&quot;              &quot;specificEpithet&quot;         
+##  [39] &quot;taxonRank&quot;                &quot;taxonomicStatus&quot;         
+##  [41] &quot;iucnRedListCategory&quot;      &quot;dateIdentified&quot;          
+##  [43] &quot;elevation&quot;                &quot;elevationAccuracy&quot;       
+##  [45] &quot;continent&quot;                &quot;stateProvince&quot;           
+##  [47] &quot;year&quot;                     &quot;month&quot;                   
+##  [49] &quot;day&quot;                      &quot;eventDate&quot;               
+##  [51] &quot;startDayOfYear&quot;           &quot;endDayOfYear&quot;            
+##  [53] &quot;lastInterpreted&quot;          &quot;license&quot;                 
+##  [55] &quot;isSequenced&quot;              &quot;isInCluster&quot;             
+##  [57] &quot;recordedBy&quot;               &quot;identifiedBy&quot;            
+##  [59] &quot;preparations&quot;             &quot;samplingProtocol&quot;        
+##  [61] &quot;geodeticDatum&quot;            &quot;class&quot;                   
+##  [63] &quot;countryCode&quot;              &quot;gbifRegion&quot;              
+##  [65] &quot;country&quot;                  &quot;publishedByGbifRegion&quot;   
+##  [67] &quot;identifier&quot;               &quot;recordNumber&quot;            
+##  [69] &quot;habitat&quot;                  &quot;verbatimEventDate&quot;       
+##  [71] &quot;institutionID&quot;            &quot;county&quot;                  
+##  [73] &quot;locality&quot;                 &quot;municipality&quot;            
+##  [75] &quot;verbatimCoordinateSystem&quot; &quot;gbifID&quot;                  
+##  [77] &quot;language&quot;                 &quot;collectionCode&quot;          
+##  [79] &quot;occurrenceID&quot;             &quot;type&quot;                    
+##  [81] &quot;catalogNumber&quot;            &quot;disposition&quot;             
+##  [83] &quot;institutionCode&quot;          &quot;collectionID&quot;            
+##  [85] &quot;organismQuantity&quot;         &quot;organismQuantityType&quot;    
+##  [87] &quot;georeferenceProtocol&quot;     &quot;dynamicProperties&quot;       
+##  [89] &quot;verbatimSRS&quot;              &quot;samplingEffort&quot;          
+##  [91] &quot;vernacularName&quot;           &quot;eventTime&quot;               
+##  [93] &quot;identificationRemarks&quot;    &quot;eventRemarks&quot;            
+##  [95] &quot;georeferencedBy&quot;          &quot;modified&quot;                
+##  [97] &quot;datasetID&quot;                &quot;datasetName&quot;             
+##  [99] &quot;verbatimLocality&quot;         &quot;locationRemarks&quot;         
+## [101] &quot;occurrenceRemarks&quot;        &quot;verbatimElevation&quot;       
+## [103] &quot;georeferenceRemarks&quot;      &quot;name&quot;</code></pre>
 </div>
 <div id="limpieza-de-datos-1" class="section level3">
 <h3>Limpieza de datos</h3>
@@ -711,34 +756,41 @@ for (s in 1:length(myspecies2)) {
   }
 }
 head(df_final)</code></pre>
-<pre><code>## # A tibble: 6 x 4
+<pre><code>## # A tibble: 6 × 4
 ##   scientificName                  decimalLongitude decimalLatitude stateProvince
 ##   &lt;chr&gt;                                      &lt;dbl&gt;           &lt;dbl&gt; &lt;chr&gt;        
-## 1 Sulcophanaeus noctis (Bates, 1~            -74.2            6.10 Santander    
-## 2 Sulcophanaeus noctis (Bates, 1~            -75.2            5.89 Antioquia    
-## 3 Sulcophanaeus noctis (Bates, 1~            -75.2            5.89 Antioquia    
-## 4 Sulcophanaeus noctis (Bates, 1~            -75.2            5.89 Antioquia    
-## 5 Sulcophanaeus noctis (Bates, 1~            -75.2            5.89 Antioquia    
-## 6 Sulcophanaeus noctis (Bates, 1~            -75.2            5.89 Antioquia</code></pre>
+## 1 Sulcophanaeus noctis (Bates, 1…            -74.3            5.84 Boyacá       
+## 2 Sulcophanaeus noctis (Bates, 1…            -74.3            5.84 Boyacá       
+## 3 Sulcophanaeus noctis (Bates, 1…            -74.3            5.84 Boyacá       
+## 4 Sulcophanaeus noctis (Bates, 1…            -74.3            5.84 Boyacá       
+## 5 Sulcophanaeus noctis (Bates, 1…            -74.3            5.84 Boyacá       
+## 6 Sulcophanaeus noctis (Bates, 1…            -74.3            5.84 Boyacá</code></pre>
 <p>También podemos observar un resumen de los datos, como cantidad, departamentos de las ocurrencias, entre otros</p>
 <pre class="r"><code># Conoceremos la cantidad de registros
 dim(df_final)[1]</code></pre>
-<pre><code>## [1] 35</code></pre>
+<pre><code>## [1] 135</code></pre>
 <pre class="r"><code># Cantidad de datos por departamento
 df_final  %&gt;%
   group_by(scientificName) %&gt;%
     count(stateProvince, sort = TRUE)</code></pre>
-<pre><code>## # A tibble: 7 x 3
-## # Groups:   scientificName [3]
-##   scientificName                       stateProvince     n
-##   &lt;chr&gt;                                &lt;chr&gt;         &lt;int&gt;
-## 1 Sulcophanaeus noctis (Bates, 1887)   Antioquia        19
-## 2 Onthophagus bidentatus Drapiez, 1819 Santander         5
-## 3 Phanaeus meleagris Blanchard, 1846   Antioquia         5
-## 4 Sulcophanaeus noctis (Bates, 1887)   Bolívar           2
-## 5 Sulcophanaeus noctis (Bates, 1887)   Tolima            2
-## 6 Sulcophanaeus noctis (Bates, 1887)   Caldas            1
-## 7 Sulcophanaeus noctis (Bates, 1887)   Santander         1</code></pre>
+<pre><code>## # A tibble: 14 × 3
+## # Groups:   scientificName [4]
+##    scientificName                        stateProvince     n
+##    &lt;chr&gt;                                 &lt;chr&gt;         &lt;int&gt;
+##  1 Sulcophanaeus noctis (Bates, 1887)    Santander        30
+##  2 Phanaeus meleagris Blanchard, 1845    Boyacá           28
+##  3 Sulcophanaeus noctis (Bates, 1887)    Antioquia        24
+##  4 Phanaeus meleagris Blanchard, 1845    Santander        14
+##  5 Onthophagus bidentatus Drapiez, 1819  Santander        10
+##  6 Sulcophanaeus noctis (Bates, 1887)    Boyacá            7
+##  7 Phanaeus meleagris Blanchard, 1845    Antioquia         6
+##  8 Copris susanae Darling &amp; Génier, 2018 Cundinamarca      5
+##  9 Copris susanae Darling &amp; Génier, 2018 Boyacá            4
+## 10 Sulcophanaeus noctis (Bates, 1887)    Bolívar           2
+## 11 Sulcophanaeus noctis (Bates, 1887)    Tolima            2
+## 12 Onthophagus bidentatus Drapiez, 1819  Cundinamarca      1
+## 13 Phanaeus meleagris Blanchard, 1845    Quindío           1
+## 14 Sulcophanaeus noctis (Bates, 1887)    Caldas            1</code></pre>
 <p>Ahora guardaremos nuestros datos en un archivo <strong>csv</strong> para poder tener la información en nuestra computadora.</p>
 <center>
 <img src="https://i.ibb.co/FDJSPdj/cat.gif" width="350" />
@@ -787,181 +839,219 @@ dev.off()</code></pre>
 <p><a name="14"></a></p>
 <p>Finalmente obtenemos la citación de las ocurrencias</p>
 <pre class="r"><code>gbif_citation(gbif_data)</code></pre>
+<pre><code>## Warning: gbif_citation() for occ_search() and occ_data() is deprecated. 
+## Use rgbif::occ_download() or rgbif::derived_dataset() instead.</code></pre>
 <pre><code>## [[1]]
 ## &lt;&lt;rgbif citation&gt;&gt;
-##    Citation: González F A, Corral Gómez J N, Cobos Hernandez R M, Vanegas
-##         Alarcón D A, Silva Tavera D F (2022). Línea base general de escarabajos
-##         para el valle medio del Magdalena - VMM. Version 1.1. Instituto de
-##         Investigación de Recursos Biológicos Alexander von Humboldt. Sampling
-##         event dataset https://doi.org/10.15472/lgpfm7 accessed via GBIF.org on
-##         2022-03-06.. Accessed from R via rgbif
-##         (https://github.com/ropensci/rgbif) on 2022-03-05
+##    Citation: Borja-Acosta K G, Neita-Moreno J (2024). Colección de Entomología
+##         del Instituto de Investigación de Recursos Biológicos Alexander von
+##         Humboldt (IAvH-E). Version 2.12. Instituto de Investigación de Recursos
+##         Biológicos Alexander von Humboldt. Occurrence dataset
+##         https://doi.org/10.15472/vmpedy accessed via GBIF.org on 2024-02-05..
+##         Accessed from R via rgbif (https://github.com/ropensci/rgbif) on
+##         2024-02-05
 ##    Rights: http://creativecommons.org/licenses/by-nc/4.0/legalcode
 ## 
 ## [[2]]
 ## &lt;&lt;rgbif citation&gt;&gt;
-##    Citation: Martínez Silva P, Gutiérrez Bautista H H (2020). Coleópteros
-##         presentes en un proceso de restauración pasiva en bosque seco tropical.
-##         Version 2.2. Corporación Universitaria del Huila. Occurrence dataset
-##         https://doi.org/10.15472/2qq6hc accessed via GBIF.org on 2022-03-06..
-##         Accessed from R via rgbif (https://github.com/ropensci/rgbif) on
-##         2022-03-05
+##    Citation: Instituto de Investigación de Recursos Biológicos Alexander von
+##         Humboldt, Agencia Nacional de Hidrocarburos (2022). Línea base general
+##         de escarabajos para el valle medio del Magdalena - VMM. Version 1.2.
+##         Instituto de Investigación de Recursos Biológicos Alexander von
+##         Humboldt. Sampling event dataset https://doi.org/10.15472/lgpfm7
+##         accessed via GBIF.org on 2024-02-05.. Accessed from R via rgbif
+##         (https://github.com/ropensci/rgbif) on 2024-02-05
 ##    Rights: http://creativecommons.org/licenses/by-nc/4.0/legalcode
 ## 
 ## [[3]]
+## &lt;&lt;rgbif citation&gt;&gt;
+##    Citation: Carvajal Cogollo J E, Morales Alba A F, Martínez Dueñas D C,
+##         Quiroga Huertas K A, Bello Guio G, Eguis Avendaño J A, García Monroy J
+##         S, Gómez Camargo J, Serrato Rivera Y G, Peña Ramírez L J, Pineda
+##         Cendales S, Morales González Ó E, Higuera Rojas D F, Sarmiento Garavito
+##         L P, Pérez Gómez D K, Morales González O E (2022). Caracterización de
+##         fauna en diferentes gradientes altitudinales del departamento de
+##         Boyacá, Colombia. Version 1.5. Universidad Pedagógica y Tecnológica de
+##         Colombia. Occurrence dataset https://doi.org/10.15472/glb3hd accessed
+##         via GBIF.org on 2024-02-05.. Accessed from R via rgbif
+##         (https://github.com/ropensci/rgbif) on 2024-02-05
+##    Rights: http://creativecommons.org/licenses/by/4.0/legalcode
+## 
+## [[4]]
+## &lt;&lt;rgbif citation&gt;&gt;
+##    Citation: Ecopetrol. S.A., Instituto de Investigación de Recursos Biológicos
+##         Alexander von Humboldt (2022). Entomofauna de la Ecoreserva La Tribuna
+##         (Neiva, Huila) - Proyecto FIBRAS. Version 1.1. Instituto de
+##         Investigación de Recursos Biológicos Alexander von Humboldt. Occurrence
+##         dataset https://doi.org/10.15472/yr14ff accessed via GBIF.org on
+##         2024-02-05.. Accessed from R via rgbif
+##         (https://github.com/ropensci/rgbif) on 2024-02-05
+##    Rights: http://creativecommons.org/licenses/by-nc/4.0/legalcode
+## 
+## [[5]]
+## &lt;&lt;rgbif citation&gt;&gt;
+##    Citation: Martínez Silva P, Gutiérrez Bautista H H (2020). Coleópteros
+##         presentes en un proceso de restauración pasiva en bosque seco tropical.
+##         Version 2.2. Corporación Universitaria del Huila. Occurrence dataset
+##         https://doi.org/10.15472/2qq6hc accessed via GBIF.org on 2024-02-05..
+##         Accessed from R via rgbif (https://github.com/ropensci/rgbif) on
+##         2024-02-05
+##    Rights: http://creativecommons.org/licenses/by-nc/4.0/legalcode
+## 
+## [[6]]
 ## &lt;&lt;rgbif citation&gt;&gt;
 ##    Citation: Neita J C, Borja-Acosta K (2021). Insectos del municipio
 ##         Cimitarra, Santander - Proyecto Santander BIO. Version 1.2. Instituto
 ##         de Investigación de Recursos Biológicos Alexander von Humboldt.
 ##         Occurrence dataset https://doi.org/10.15472/po6pzh accessed via
-##         GBIF.org on 2022-03-06.. Accessed from R via rgbif
-##         (https://github.com/ropensci/rgbif) on 2022-03-05
+##         GBIF.org on 2024-02-05.. Accessed from R via rgbif
+##         (https://github.com/ropensci/rgbif) on 2024-02-05
 ##    Rights: http://creativecommons.org/licenses/by-nc/4.0/legalcode
 ## 
-## [[4]]
+## [[7]]
 ## &lt;&lt;rgbif citation&gt;&gt;
 ##    Citation: Lopera A, Lizcano D J (2021). Registros biológicos asociados al
 ##         monitoreo de la diversidad de escarabajos en paisajes ganaderos de
 ##         bosque 2013 - 2017. Asociación GAICA. Occurrence dataset
-##         https://doi.org/10.15472/6ttvzs accessed via GBIF.org on 2022-03-06..
+##         https://doi.org/10.15472/6ttvzs accessed via GBIF.org on 2024-02-05..
 ##         Accessed from R via rgbif (https://github.com/ropensci/rgbif) on
-##         2022-03-05
+##         2024-02-05
 ##    Rights: http://creativecommons.org/licenses/by-nc/4.0/legalcode
 ## 
-## [[5]]
+## [[8]]
 ## &lt;&lt;rgbif citation&gt;&gt;
-##    Citation: Mendivil Nieto J A, Giraldo Echeverri C, Quevedo Vega C J (2020).
+##    Citation: Mendivil Nieto J A, Giraldo Echeverri C, Quevedo Vega C J (2022).
 ##         Escarabajos estercoleros asociados a sistemas de ganadería sostenible
-##         en diferentes regiones de Colombia. Version 2.3. Fundación Centro para
+##         en diferentes regiones de Colombia. Version 2.4. Fundación Centro para
 ##         la Investigación en Sistemas Sostenibles de Producción Agropecuaria -
 ##         Cipav. Occurrence dataset https://doi.org/10.15472/yje84v accessed via
-##         GBIF.org on 2022-03-06.. Accessed from R via rgbif
-##         (https://github.com/ropensci/rgbif) on 2022-03-05
+##         GBIF.org on 2024-02-05.. Accessed from R via rgbif
+##         (https://github.com/ropensci/rgbif) on 2024-02-05
 ##    Rights: http://creativecommons.org/publicdomain/zero/1.0/legalcode
 ## 
-## [[6]]
+## [[9]]
 ## &lt;&lt;rgbif citation&gt;&gt;
-##    Citation: Murillo Barahona D A, Rengifo Murillo L (2021). Colección
-##         Entomológica de la Universidad Tecnológica del Chocó. Version 6.4.
+##    Citation: Murillo Barahona D A, Rengifo Murillo L (2023). Colección
+##         Entomológica de la Universidad Tecnológica del Chocó. Version 6.5.
 ##         Universidad Tecnológica del Chocó. Occurrence dataset
-##         https://doi.org/10.15472/rmbpsh accessed via GBIF.org on 2022-03-06..
+##         https://doi.org/10.15472/rmbpsh accessed via GBIF.org on 2024-02-05..
 ##         Accessed from R via rgbif (https://github.com/ropensci/rgbif) on
-##         2022-03-05
+##         2024-02-05
 ##    Rights: http://creativecommons.org/publicdomain/zero/1.0/legalcode
 ## 
-## [[7]]
+## [[10]]
 ## &lt;&lt;rgbif citation&gt;&gt;
 ##    Citation: Lopera A, Quintana Vargas A (2021). Coleópteros de los bosques
 ##         montanos del Oriente Antioqueño, Cañón del río Melcocho, en el
 ##         municipio de El Carmen de Viboral, Antioquia - Proyecto Colombia BIO.
 ##         Version 1.3. Instituto de Investigación de Recursos Biológicos
 ##         Alexander von Humboldt. Occurrence dataset
-##         https://doi.org/10.15472/npzc22 accessed via GBIF.org on 2022-03-06..
+##         https://doi.org/10.15472/npzc22 accessed via GBIF.org on 2024-02-05..
 ##         Accessed from R via rgbif (https://github.com/ropensci/rgbif) on
-##         2022-03-05
+##         2024-02-05
 ##    Rights: http://creativecommons.org/licenses/by-nc/4.0/legalcode
 ## 
-## [[8]]
+## [[11]]
 ## &lt;&lt;rgbif citation&gt;&gt;
-##    Citation: Gómez-Posada C, Borja-Acosta K (2022). Colección de Entomología
+##    Citation: Borja-Acosta K G, Leyton Ramos L M (2024). Colección de Tejidos
 ##         del Instituto de Investigación de Recursos Biológicos Alexander von
-##         Humboldt (IAvH-E). Version 2.6. Instituto de Investigación de Recursos
-##         Biológicos Alexander von Humboldt. Occurrence dataset
-##         https://doi.org/10.15472/vmpedy accessed via GBIF.org on 2022-03-06..
+##         Humboldt (IAvH-CT). Version 20.9. Instituto de Investigación de
+##         Recursos Biológicos Alexander von Humboldt. Occurrence dataset
+##         https://doi.org/10.15472/9uddlh accessed via GBIF.org on 2024-02-05..
 ##         Accessed from R via rgbif (https://github.com/ropensci/rgbif) on
-##         2022-03-05
+##         2024-02-05
 ##    Rights: http://creativecommons.org/licenses/by-nc/4.0/legalcode
 ## 
-## [[9]]
-## &lt;&lt;rgbif citation&gt;&gt;
-##    Citation: Borja-Acosta K (2022). Colección de Tejidos del Instituto de
-##         Investigación de Recursos Biológicos Alexander von Humboldt (IAvH-CT).
-##         Version 20.4. Instituto de Investigación de Recursos Biológicos
-##         Alexander von Humboldt. Occurrence dataset
-##         https://doi.org/10.15472/9uddlh accessed via GBIF.org on 2022-03-06..
-##         Accessed from R via rgbif (https://github.com/ropensci/rgbif) on
-##         2022-03-05
-##    Rights: http://creativecommons.org/licenses/by-nc/4.0/legalcode
-## 
-## [[10]]
+## [[12]]
 ## &lt;&lt;rgbif citation&gt;&gt;
 ##    Citation: Bonell Rojas W Y (2018). Caracterización biológica en la Serranía
 ##         de San Lucas 2015. Version 2.0. Parques Nacionales Naturales de
 ##         Colombia. Occurrence dataset https://doi.org/10.15472/uarl1x accessed
-##         via GBIF.org on 2022-03-06.. Accessed from R via rgbif
-##         (https://github.com/ropensci/rgbif) on 2022-03-05
+##         via GBIF.org on 2024-02-05.. Accessed from R via rgbif
+##         (https://github.com/ropensci/rgbif) on 2024-02-05
 ##    Rights: http://creativecommons.org/licenses/by-nc/4.0/legalcode
 ## 
-## [[11]]
+## [[13]]
+## &lt;&lt;rgbif citation&gt;&gt;
+##    Citation: Ramirez Hernandez L M (2019). Estudio de Biodiversidad Mina
+##         Calenturitas, Temporada de Lluvias. INERCO Consultoría Colombia.
+##         Occurrence dataset https://doi.org/10.15472/uecnoz accessed via
+##         GBIF.org on 2024-02-05.. Accessed from R via rgbif
+##         (https://github.com/ropensci/rgbif) on 2024-02-05
+##    Rights: http://creativecommons.org/licenses/by/4.0/legalcode
+## 
+## [[14]]
 ## &lt;&lt;rgbif citation&gt;&gt;
 ##    Citation: Quintana Vargas A (2021). Biodiversidad de un bosque seco tropical
 ##         del Valle Medio del río Magdalena: evaluación integrada a través de
 ##         multitaxones. Version 1.2. Instituto de Investigación de Recursos
 ##         Biológicos Alexander von Humboldt. Occurrence dataset
-##         https://doi.org/10.15472/ptmv1d accessed via GBIF.org on 2022-03-06..
+##         https://doi.org/10.15472/ptmv1d accessed via GBIF.org on 2024-02-05..
 ##         Accessed from R via rgbif (https://github.com/ropensci/rgbif) on
-##         2022-03-05
+##         2024-02-05
 ##    Rights: http://creativecommons.org/licenses/by-nc/4.0/legalcode
 ## 
-## [[12]]
-## &lt;&lt;rgbif citation&gt;&gt;
-##    Citation: Ramirez Hernandez L M (2019). Estudio de Biodiversidad Mina
-##         Calenturitas, Temporada de Lluvias. INERCO Consultoría Colombia.
-##         Occurrence dataset https://doi.org/10.15472/uecnoz accessed via
-##         GBIF.org on 2022-03-06.. Accessed from R via rgbif
-##         (https://github.com/ropensci/rgbif) on 2022-03-05
-##    Rights: http://creativecommons.org/licenses/by/4.0/legalcode
-## 
-## [[13]]
+## [[15]]
 ## &lt;&lt;rgbif citation&gt;&gt;
 ##    Citation: Guañarita Bañol A M (2021). Caracterizaciones rápidas de
 ##         biodiversidad en grupos biológicos de la planicie del valle del río
 ##         Cauca. Version 4.2. Universidad Icesi. Occurrence dataset
-##         https://doi.org/10.15472/dbjjay accessed via GBIF.org on 2022-03-06..
+##         https://doi.org/10.15472/dbjjay accessed via GBIF.org on 2024-02-05..
 ##         Accessed from R via rgbif (https://github.com/ropensci/rgbif) on
-##         2022-03-05
+##         2024-02-05
 ##    Rights: http://creativecommons.org/licenses/by-nc/4.0/legalcode
 ## 
-## [[14]]
+## [[16]]
 ## &lt;&lt;rgbif citation&gt;&gt;
 ##    Citation: Hurtado Guerra A M (2020). Caracterización biológica de la ventana
 ##         Beltrán, corregimiento Paquiló, Municipio de Beltrán, Cundinamarca.
 ##         Version 2.4. Instituto de Investigación de Recursos Biológicos
 ##         Alexander von Humboldt. Occurrence dataset
-##         https://doi.org/10.15472/hr8ml2 accessed via GBIF.org on 2022-03-06..
+##         https://doi.org/10.15472/hr8ml2 accessed via GBIF.org on 2024-02-05..
 ##         Accessed from R via rgbif (https://github.com/ropensci/rgbif) on
-##         2022-03-05
+##         2024-02-05
 ##    Rights: http://creativecommons.org/licenses/by-nc/4.0/legalcode
 ## 
-## [[15]]
+## [[17]]
 ## &lt;&lt;rgbif citation&gt;&gt;
 ##    Citation: González A (2021). Escarabajos coprófagos (Coleoptera:
 ##         Scarabaeidae: Scarabaeinae) de bosques secos Colombianos de la
 ##         Colección Entomológica del Instituto Alexander von Humboldt. Version
 ##         4.5. Instituto de Investigación de Recursos Biológicos Alexander von
 ##         Humboldt. Occurrence dataset https://doi.org/10.15472/hjh6ys accessed
-##         via GBIF.org on 2022-03-06.. Accessed from R via rgbif
-##         (https://github.com/ropensci/rgbif) on 2022-03-05
+##         via GBIF.org on 2024-02-05.. Accessed from R via rgbif
+##         (https://github.com/ropensci/rgbif) on 2024-02-05
 ##    Rights: http://creativecommons.org/licenses/by-nc/4.0/legalcode
 ## 
-## [[16]]
+## [[18]]
+## &lt;&lt;rgbif citation&gt;&gt;
+##    Citation: Vergara Navarro E V, González Almario C, Sandoval Caceres Y P
+##         (2022). Colección Taxonómica Nacional de Insectos “Luis María Murillo”
+##         (CTNI). Version 2.6. Corporación Colombiana de Investigación
+##         Agropecuaria - AGROSAVIA. Occurrence dataset
+##         https://doi.org/10.15472/fvudyo accessed via GBIF.org on 2024-02-05..
+##         Accessed from R via rgbif (https://github.com/ropensci/rgbif) on
+##         2024-02-05
+##    Rights: http://creativecommons.org/licenses/by-nc/4.0/legalcode
+## 
+## [[19]]
 ## &lt;&lt;rgbif citation&gt;&gt;
 ##    Citation: León González J (2021). Escarabajos coprófagos (Scarabaeidae:
 ##         Scarabaeinae) del eje cafetero Colombiano. Version 7.3. Instituto de
 ##         Investigación de Recursos Biológicos Alexander von Humboldt. Occurrence
 ##         dataset https://doi.org/10.15472/dm9u19 accessed via GBIF.org on
-##         2022-03-06.. Accessed from R via rgbif
-##         (https://github.com/ropensci/rgbif) on 2022-03-05
+##         2024-02-05.. Accessed from R via rgbif
+##         (https://github.com/ropensci/rgbif) on 2024-02-05
 ##    Rights: http://creativecommons.org/licenses/by-nc/4.0/legalcode
 ## 
-## [[17]]
+## [[20]]
 ## &lt;&lt;rgbif citation&gt;&gt;
 ##    Citation: Jaramillo N, Marín J D, Wolff Echeverri M, Duque Veléz P, Veléz
-##         Bravo A, Jaramillo J G (2022). Colección Entomológica de Piedras
-##         Blancas. Version 2.5. Museo Entomológico de Comfenalco - Antioquia.
+##         Bravo A, Jaramillo J G (2023). Colección Entomológica de Piedras
+##         Blancas. Version 2.6. Museo Entomológico de Comfenalco - Antioquia.
 ##         Occurrence dataset https://doi.org/10.15472/xblw2v accessed via
-##         GBIF.org on 2022-03-06.. Accessed from R via rgbif
-##         (https://github.com/ropensci/rgbif) on 2022-03-05
+##         GBIF.org on 2024-02-05.. Accessed from R via rgbif
+##         (https://github.com/ropensci/rgbif) on 2024-02-05
 ##    Rights: http://creativecommons.org/licenses/by/4.0/legalcode</code></pre>
 </div>
 </div>
