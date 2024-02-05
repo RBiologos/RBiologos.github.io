@@ -81,7 +81,7 @@
 				<ul class="navbar-nav ml-auto">
 					
 					<li class="nav-item">
-            <a class="nav-link" href="/#https://rbiologos.github.io/">Inicio</a>
+            <a class="nav-link" href="/#home">Inicio</a>
 					</li>
 					
 					
@@ -155,16 +155,16 @@
           <li class="list-inline-item"><a href="/author/maximiliano-ortiz/">Maximiliano Ortiz</a></li>
           <li class="list-inline-item">miércoles, ene. 3, 2024</li>
         </ul>
-        <img class="img-fluid mb-50 lozad" data-src="https://rbiologos.github.io/" alt="blog-image">
+        <img class="img-fluid mb-50 lozad" data-src="https://i.ibb.co/jJ22hzQ/ES.png" alt="blog-image">
       </div>
       <div class="col-lg-8 offset-lg-2">
         <div class="post-single-content">
           
 
 
-<p>En los campos de la biología evolutiva y la biogeografía, investigar la distribución de las especies y su relación con la evolución es esencial para desentrañar los complejos patrones que han dado forma a la diversidad de la vida a lo largo del tiempo y en diferentes lugares.</p>
+<p>En los campos de la biogeografía y la biología evolutiva, investigar la distribución de las especies y su relación con la evolución es esencial para desentrañar los complejos patrones que han dado forma a la diversidad de la vida a lo largo del tiempo y en diferentes lugares.</p>
 <center>
-<img src="https://i.ibb.co/FDBH0jr/Aot1.gif" width="350" />
+<img src="https://i.ibb.co/WgStRJz/gumball.gif" width="350" />
 </center>
 <p></br></p>
 <div id="contenido-del-post" class="section level1">
@@ -172,8 +172,10 @@
 <ul>
 <li><a href="#id_1">Introducción</a></li>
 <li><a href="#id_2">Código en R</a>
-- <a href="#id_3">Función phylo.to.map()</a>
-- <a href="#id_4">Visualización análisis</a></li>
+<ul>
+<li><a href="#id_3">Función phylo.to.map()</a></li>
+<li><a href="#id_4">Visualización y análisis</a></li>
+</ul></li>
 <li><a href="#id_5">Resumen</a></li>
 <li><a href="#id_6">Literatura</a></li>
 <li><a href="#id_7">Más información</a></li>
@@ -184,31 +186,47 @@
 <p><a name="1"></a></p>
 <p>En los campos de la <em>biología evolutiva y la biogeografía</em>, investigar la distribución de las especies y su relación con la evolución es esencial para desentrañar los complejos patrones que han dado forma a la diversidad de la vida a lo largo del tiempo y en diferentes lugares. La distribución geográfica de las especies es el resultado de una interacción dinámica entre una multitud de factores. Entre estos factores se incluyen eventos históricos, como las glaciaciones que han modificado los paisajes y los hábitats; cambios climáticos a lo largo de escalas temporales diversas, que han influido en la disponibilidad de recursos y en la adaptabilidad de las especies; barreras geográficas, como cordilleras, ríos y océanos, que han actuado como obstáculos para la dispersión; y procesos evolutivos, como la evolución de características morfológicas y fisiológicas que han permitido a las especies adaptarse a entornos específicos y expandirse a nuevas áreas.</p>
 <p>En este tutorial, exploraremos cómo utilizar la función <res>phylo.to.map</res> del paquete <em><res>phytools</res></em> diseñado por Revell (2012) en R, para representar gráficamente datos filogenéticos y la distribución geográfica de poblaciones de una misma especies. Dicha función nos permite combinar técnicas de análisis filogenético y mapeo geográfico para visualizar la relación entre la historia evolutiva de las especies o individuos de una misma especie y su distribución geográfica. A lo largo de este tutorial, aprenderemos paso a paso cómo utilizar esta función para crear visualizaciones impactantes que nos ayuden a comprender mejor la biogeografía y la evolución de las especies.</p>
+<center>
+<img src="https://i.ibb.co/DDfy0cN/sussie.gif" width="350" />
+</center>
+<p></br></p>
 </div>
 <div id="código-en-r" class="section level1">
 <h1>Código en R</h1>
 <p><a name="2"></a></p>
 <p>Para poder realizar este análisis vamos a utilizar el código que encontraremos en <a href="https://github.com/Maxornatus/phylo.tomap/tree/main">phylo.to.map para análisis biogeográficos</a>, el cual es un repositorio creado por el autor, con el fin de compartir su aprendizaje. En este repositorio encontrarás los archivos relevantes para el análisis. Recuerda que es esencial asegurar que R pueda acceder a los archivos necesarios sin problemas.</p>
-<p>El primer paso que daremos será cargar los paquetes necesarios que utilizaremos en este tutorial mediante la función <code>library()</code>. Estos paquetes contienen funciones y herramientas específicas que se utilizarán más adelante en el análisis. Cargar los paquetes al inicio del documento asegura que las funciones requeridas estén disponibles para su uso.</p>
+<p>El primer paso que daremos será cargar los paquetes necesarios que utilizaremos en este tutorial mediante la función <res>library()</res>. Estos paquetes contienen funciones y herramientas específicas que se utilizarán más adelante en el análisis. Cargar los paquetes al inicio del documento asegura que las funciones requeridas estén disponibles para su uso.</p>
 <pre class="r"><code>library(phytools)
 library(viridis)
 library(viridisLite)
 library(ape)
 library(maps)</code></pre>
-<p>Despues de cargados los paquetes necesarios, procederemos a leer los archivos requeridos para nuestro análisis, para ello, utilizaremos las funciones <code>read.csv()</code> y <code>read.tree()</code>. Estos datos incluyen información geoespacial y filogenética necesaria para el análisis y la visualización posterior.</p>
+<p>Despues de cargados los paquetes necesarios, procederemos a leer los archivos requeridos para nuestro análisis, para ello, utilizaremos las funciones <res>read.csv()</res> y <res>read.tree()</res>. Estos datos incluyen información geoespacial y filogenética necesaria para el análisis y la visualización posterior.</p>
+<center>
+<img src="https://i.ibb.co/tKNx3vN/Darwin.gif" width="350" />
+</center>
+<p></br></p>
+<p>Los datos que cargaremos están ordenados en una matriz que contiene la latitud y la longitud de todas las especies a analizar.</p>
+<blockquote>
+<p>Debes tener en cuenta que los nombres de las filas deben ser los mismos que los de tree$tip.label; sin embargo, se puede proporcionar más de un conjunto de coordenadas por especie duplicando algunos nombres de fila.</p>
+</blockquote>
 <pre class="r"><code>data &lt;- read.csv(&quot;https://raw.githubusercontent.com/Maxornatus/phylo.tomap/main/coo_vari.csv&quot;, 
                  header = TRUE, row.names = 1)
 
 tree &lt;- read.tree(&quot;https://raw.githubusercontent.com/Maxornatus/phylo.tomap/main/B_vari.tre&quot;)</code></pre>
-<p>Posteriormente, tendremos que definir una lista de rangos de filas que corresponden a diferentes grupos de datos. Estos rangos se utilizarán posteriormente para asignar colores a cada grupo en las visualizaciones.</p>
-<pre class="r"><code>rangos_color &lt;- list(c(1, 12), # Primer rango
-  c(13, nrow(data))) # Segundo rango</code></pre>
-<p>Luego, estableceremos un vector de colores personalizados que se asignarán a cada grupo de datos. Estos colores se utilizarán para distinguir visualmente los diferentes grupos. En nuestro caso, utilizaremos el color azul y verde.</p>
+<p>Posteriormente a nuestra lectura de datos, tendremos que definir una lista de rangos de filas que corresponden a diferentes grupos de datos, esta lista está previamente definida según los análisis filogenéticos previos. Estos rangos se utilizarán posteriormente para asignar colores a cada grupo en las visualizaciones.</p>
+<pre class="r"><code>rangos_color &lt;- list(c(1, 12), # Primer rango de la especie 1 a la 12
+  c(13, nrow(data))) # Segundo rango de la especie 13 en adelante.</code></pre>
+<p>Luego, estableceremos un vector de colores personalizados que se asignarán a cada uno de los dos grupos de datos. Estos colores se utilizarán para distinguir visualmente los diferentes grupos. En nuestro caso, utilizaremos el color azul y verde.</p>
 <pre class="r"><code>colores_personalizados &lt;- c(&quot;blue&quot;, &quot;green&quot;)</code></pre>
 <div id="función-phylo.to.map" class="section level2">
 <h2>Función phylo.to.map()</h2>
 <p><a name="3"></a></p>
 <p>Ahora utilizaremos la función <em><res>phylo.to.map()</res></em> para generar un objeto que combina un <em>árbol filogenético</em> y <em>datos geoespaciales</em>. Este objeto es fundamental para la generación de mapas filogenéticos que muestran la distribución geográfica de las poblaciones representadas en el árbol.</p>
+<center>
+<img src="https://i.ibb.co/zmB7ght/brain.gif" width="350" />
+</center>
+<p></br></p>
 <pre class="r"><code>obj &lt;- phylo.to.map(tree, data, plot = FALSE, direction = &quot;rightwards&quot;)</code></pre>
 <p>Luego, inicializaremos un vector para almacenar los colores asignados a cada especie dentro de los grupos definidos anteriormente. Este paso se realiza con el fin de preparar el terreno para asignar colores específicos a cada especie.</p>
 <pre class="r"><code>cols &lt;- rep(NA, length(obj[[&quot;tree&quot;]][[&quot;tip.label&quot;]]))</code></pre>
@@ -223,17 +241,21 @@ tree &lt;- read.tree(&quot;https://raw.githubusercontent.com/Maxornatus/phylo.to
 <p>Sumado a ello, vamos a asignar colores a las puntas de nuestro <em>árbol filogenético</em>, lo que permite visualizar la relación entre las poblaciones y su distribución geográfica.</p>
 <pre class="r"><code>cols &lt;- setNames(cols, tree$tip.label)</code></pre>
 </div>
-<div id="visualización-análisis" class="section level2">
-<h2>Visualización análisis</h2>
+<div id="visualización-y-análisis" class="section level2">
+<h2>Visualización y análisis</h2>
 <p><a name="4"></a></p>
-<p>Para generar una visualización mediante un mapa filogenético, utilizaremos la función <code>plot()</code>. En esta función especificaremos los parámetros necesarios como la dirección del árbol, los colores asignados a los individuos y los límites del eje.</p>
-<pre class="r"><code>plot(obj, direction = &quot;rightwards&quot;,colors = cols, ftype = &quot;off&quot;, fsize = 0.8, 
+<p>Para generar una visualización mediante un mapa filogenético, utilizaremos la función <res>plot()</res>. En esta función especificaremos los parámetros necesarios como la dirección del árbol, los colores asignados a los individuos y los límites del eje.</p>
+<center>
+<img src="https://i.ibb.co/Jvfjr7y/Ahhhh.gif" width="350" />
+</center>
+<p></br></p>
+<pre class="r"><code>plot(obj, direction = &quot;rightwards&quot;, colors = cols, ftype = &quot;off&quot;, fsize = 0.8, 
      cex.points=c(0.8,1.2), pts = T, lwd = 1.5, xlim = c(-90, -35), ylim = c(-55, 12),)
 
 legend(&quot;topright&quot;, legend = c(&quot;Población uno&quot;, &quot;Población dos&quot;), 
        fill = colores_personalizados, cex = 0.8, bty = &quot;n&quot;)</code></pre>
-<p><img src="https://rbiologos.github.io/blog/a019/index.es_files/figure-html/grafica%20inicial-1.png" width="672" /></p>
-<p>Cómo podemos ver, ya nuestro mapa está generado, incluyendo el árbol filogenético de las especies y su distribución en sudamérica. Además, podremos incluir los nombres de los individuos en las puntas del árbol <code>ftype = "i"</code> para una referencia más clara, mediante el siguiente código.</p>
+<p><img src="https://rbiologos.github.io/blog/a019/index.es_files/figure-html/grafica%20inicial-1.png" width="100%" /></p>
+<p>Cómo podemos ver, ya nuestro mapa está generado, incluyendo el árbol filogenético de las especies y su distribución en sudamérica. Además, podremos incluir los nombres de los individuos en las puntas del árbol <res>ftype = “i”</res> para una referencia más clara, mediante el siguiente código.</p>
 <pre class="r"><code>plot(obj, direction = &quot;rightwards&quot;,colors = cols, ftype = &quot;i&quot;, fsize = 0.8, 
      cex.points = c(0.8, 1.2), pts = T, lwd = 1.5, xlim = c(-90, -35), 
      ylim = c(-55, 12),) 
@@ -241,30 +263,37 @@ legend(&quot;topright&quot;, legend = c(&quot;Población uno&quot;, &quot;Poblac
 # Personalizamos la leyenda de nuestro mapa
 legend(&quot;topright&quot;, legend = c(&quot;Poblacion uno&quot;, &quot;Poblacion dos&quot;), 
        fill = colores_personalizados, cex = 0.8, bty = &quot;n&quot;)</code></pre>
-<p><img src="https://rbiologos.github.io/blog/a019/index.es_files/figure-html/grafica-1.png" width="672" /></p>
-<p>Así mismo, nosotros podemos generar una visualización alternativa que muestre la relación filogenética dentro del mapa geográfico, proporcionando una perspectiva adicional sobre la distribución y la evolución de las poblaciones.</p>
+<p><img src="https://rbiologos.github.io/blog/a019/index.es_files/figure-html/grafica-1.png" width="100%" /></p>
+<p>Así, nuestro mapa está completado con las relaciones de las diferentes especies analizadas y su relación en relación a la distribución biogeográfica de cada especie. Igualmente, podemos generar una visualización alternativa que muestre la relación filogenética dentro del mapa geográfico, proporcionando una perspectiva adicional sobre la distribución y la evolución de las poblaciones.</p>
 <pre class="r"><code>plot(obj, type = &quot;direct&quot;, colors = cols, pts = FALSE, fsize = 0.8,  
      xlim = c(-90, -35), ylim = c(-55, 12), map.bg = &quot;lightgreen&quot;, 
      map.fill = &quot;lightblue&quot;, ftype = &quot;off&quot;, cex.points = 3, delimit_map = TRUE)</code></pre>
-<p><img src="https://rbiologos.github.io/blog/a019/index.es_files/figure-html/grafica%20alternativa-1.png" width="672" />
-Cada paso en este código contribuye a la preparación y visualización de nuestros datos para comprender mejor la distribución geográfica y la relación evolutiva de las poblaciones o especies que estamos estudiando.</p>
+<p><img src="https://rbiologos.github.io/blog/a019/index.es_files/figure-html/grafica%20alternativa-1.png" width="100%" /></p>
 </div>
 </div>
 <div id="resumen" class="section level1">
 <h1>Resumen</h1>
 <p><a name="5"></a></p>
+<p>Cada paso en este código contribuye a la preparación y visualización de nuestros datos para comprender mejor la distribución geográfica y la relación evolutiva de las poblaciones o especies que estamos estudiando.</p>
+<p>Recuerda que debemos hacer un análisis reflexivo sobre nuestros resultados para comprenderlos de mejor manera y poder desarrollar una discusión y conclusión más acertada de nuestra investigación.</p>
+<center>
+<img src="https://i.ibb.co/qDXC6wn/Faces.gif" width="350" />
+</center>
+<p></br></p>
 </div>
 <div id="literatura" class="section level1">
 <h1>Literatura</h1>
 <p><a name="6"></a></p>
 <ul>
-<li><a href="https://besjournals.onlinelibrary.wiley.com/doi/10.1111/j.2041-210X.2011.00169.x">phytools: an R package for phylogenetic comparative biology (and other things)</a></li>
+<li><p><a href="https://besjournals.onlinelibrary.wiley.com/doi/10.1111/j.2041-210X.2011.00169.x">phytools: an R package for phylogenetic comparative biology (and other things)</a></p></li>
+<li><p><a href="https://cran.r-project.org/web/packages/phytools/phytools.pdf">Package ‘phytools’</a></p></li>
 </ul>
 </div>
 <div id="más-información" class="section level1">
 <h1>Más información</h1>
 <p><a name="7"></a></p>
-<p>Estos análisis se han realizado utilizando el software R (v.4.3.2) y Rstudio (v. 2023.12.1+402)</p>
+<p>Estos análisis se han realizado utilizando el software R (v.4.3.2) y Rstudio (v. 2023.12.1+402).</p>
+<p>El proceso de edición ha sido realizado por <a href="https://rbiologos.github.io/author/david-vanegas-alarcon/">David Vanegas-Alarcón</a></p>
 <p>Recuerda que todos nuestros códigos están almacenados en <a href="https://github.com/RBiologos/Posts">GitHub</a></p>
 <center>
 <img src="https://i.ibb.co/DpKmR1k/github.png" width="350" />
