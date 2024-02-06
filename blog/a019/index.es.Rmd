@@ -1,7 +1,7 @@
 ---
 title: Análisis biogeográficos
 author: Maximiliano Ortiz
-date: '2024-02-05'
+date: '2024-02-06'
 image: "https://i.ibb.co/qs8Hxwk/ES.png"
 slug: []
 categories:
@@ -181,7 +181,7 @@ Recuerda que debemos hacer un análisis reflexivo sobre nuestros resultados para
 
 Estos análisis se han realizado utilizando el software R (v.4.3.2) y Rstudio (v. 2023.12.1+402). 
 
-El proceso de edición del post ha sido realizado por [David Vanegas-Alarcón](https://rbiologos.github.io/author/david-vanegas-alarcon/)
+El proceso de edición del post ha sido realizado por [David Vanegas-Alarcón](https://rbiologos.github.io/author/david-vanegas/)
 
 Recuerda que todos nuestros códigos están almacenados en [GitHub](https://github.com/RBiologos/Posts)
 
